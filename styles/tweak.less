@@ -1,0 +1,296 @@
+
+/* cache busting x */
+
+
+/* GENERAL
+---------------------------------------------------*/
+
+// tweak: { "category" : "General", "type" : "color", "title" : "Site Background", "target" : "body" }
+@siteBackground: #ffffff;
+
+// tweak: { "category" : "General", "type" : "image", "title" : "Page Background Image", "target" : "body:not(.collection-type-index):not(.collection-type-gallery)", "showOnlyWhenPresent" : "body:not(.collection-type-index):not(.collection-type-gallery)" }
+.bg-image {
+  background-image: url("/assets/momentum-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+// tweak: { "category" : "General", "type" : "value", "title" : "Page Width", "min" : 400, "max" : 1200, "step" : 10, "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent", "showOnlyWhenPresent" : "body:not(.collection-type-index):not(.collection-type-gallery)" }
+@contentWidth: 900px;
+
+// tweak: { "category" : "General", "type" : "dropdown", "title" : "Page Alignment", "options" : [ "Left", "Center", "Right" ], "default" : "Center", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent", "showOnlyWhenPresent" : "body:not(.collection-type-index):not(.collection-type-gallery)" }
+
+// tweak: { "category" : "General", "type" : "checkbox", "title" : "Page Title/Description", "active" : "true", "target" : "#page-settings", "showOnlyWhenPresent" : "body:not(.collection-type-index):not(.collection-type-gallery)" }
+
+
+/* HEADER
+---------------------------------------------------*/
+
+// tweak: { "category" : "Site Title / Logo", "type" : "font", "title" : "Site Title", "target" : "#header .logo a"}
+.site-title-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Site Title / Logo", "type" : "color", "title" : "Site Title Color", "target" : "#header .logo a" }
+@siteTitleColor: #333333;
+
+// tweak: { "category" : "Site Title / Logo", "type" : "value", "title" : "Logo Image Height", "min" : 15, "max" : 100, "step" : 5, "target" : "#header img" }
+@logoSize: 20px;
+
+
+
+/* NAVIGATION
+---------------------------------------------------*/
+
+// tweak: { "category" : "Navigation", "type" : "font", "title" : "Navigation", "target" : ".main-nav li a"}
+.nav-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Navigation Color", "target" : ".main-nav li a" }
+@navColor: hsla(0,0%,66%,1);
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Navigation (Active) Color", "target" : ".main-nav li a" }
+@navActiveColor: #333333;
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Navigation (Hover) Color", "target" : ".main-nav li a" }
+@navHoverColor: #000000;
+
+// tweak: { "category" : "Navigation", "type" : "dropdown", "title" : "Navigation Position", "options" : [ "Bottom", "Top" ], "default" : "Bottom", "target" : "#header", "js" : "true" }
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Navigation Background", "target" : "#header" }
+@siteNavBackground: #ffffff;
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Navigation Border Color", "target" : "#header" }
+@siteNavBorderColor: #dedede;
+
+// tweak: { "category" : "Navigation", "type" : "value", "title" : "Navigation Padding", "min" : 0, "max" : 50, "step" : 5, "target" : "#header" }
+@navPadding: 26px;
+
+// tweak: { "category" : "Navigation", "type" : "value", "title" : "Navigation Link Spacing", "min" : 5, "max" : 25, "step" : 5, "target" : "#header" }
+@navItemSpacing: 10px;
+
+
+
+/* GALLERY STYLES
+---------------------------------------------------*/
+
+// tweak: { "category" : "Gallery Styles", "type" : "dropdown", "title" : "Gallery Style", "options" : [ "Full Bleed", "Center" ], "default" : "Full Bleed", "target" : "#fullscreenBrowser .slideshow", "js" : "true", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "dropdown", "title" : "Index Aspect Ratio", "options" : [ "Auto", "4:3", "1:1" ], "default" : "Auto", "target" : "#fullscreenBrowser .slideshow", "js" : "true", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "value", "title" : "Gallery Play Speed", "min" : 1, "max" : 5, "step" : 0.1, "condition" : { "Gallery Auto Play": ["true"] }, "target" : "#fullscreenBrowser .slideshow", "js" : "true", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+@galleryPlaySpeed: 3.0;
+
+// tweak: { "category" : "Gallery Styles", "type" : "color", "title" : "Gallery Icon Color", "target" : "#fullscreenBrowser .slideshow", "condition" : { "Gallery Style": ["Center"] }, "showOnlyWhenPresent" : "body.gallery-style-center #fullscreenBrowser .slideshow" }
+@navIconColor: #333333;
+
+// tweak: { "category" : "Gallery Styles", "type" : "color", "title" : "Gallery Icon (Hover) Color", "target" : "#fullscreenBrowser .slideshow", "condition" : { "Gallery Style": ["Center"] }, "showOnlyWhenPresent" : "body.gallery-style-center #fullscreenBrowser .slideshow" }
+@navIconHoverColor: #000000;
+
+// tweak: { "category" : "Gallery Styles", "type" : "dropdown", "title" : "Gallery Initial View", "options" : ["Slideshow", "Grid", "Infoview", "Slideshow (Homepage) / Grid", "Slideshow (Homepage) / Infoview"], "default" : "Slideshow", "target" : "#fullscreenBrowser .slideshow", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "dropdown", "title" : "Gallery Transition", "options" : [ "Slide", "Fade" ], "default" : "Slide", "target" : "#fullscreenBrowser .slideshow", "js" : "true", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "checkbox", "title" : "Gallery Auto Play", "active" : "false", "target" : "#fullscreenBrowser .slideshow", "js" : "true", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "dropdown", "title" : "Gallery Arrows", "options" : [ "Simple", "Circle" ], "default" : "Simple", "target" : "#fullscreenBrowser .slideshow", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+// tweak: { "category" : "Gallery Styles", "type" : "checkbox", "title" : "Gallery Index Icon", "default" : "true", "target" : ".ctrl-button.all", "showOnlyWhenPresent" : "#fullscreenBrowser .slideshow" }
+
+
+
+/* MAIN CONTENT
+---------------------------------------------------*/
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Headings Color", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) h1, body:not(.collection-type-index):not(.collection-type-gallery) h2, body:not(.collection-type-index):not(.collection-type-gallery) h3, .entry-title a" }
+@headingsColor: #333333;
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Heading 1", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) h1, .entry-title a", loadAllVariants: "true" }
+.heading-1-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 34px;
+  text-transform: capitalize;
+  text-decoration: none;
+  letter-spacing: 0px;
+}
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Heading 2", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) h2", loadAllVariants: "true" }
+.heading-2-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 22px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0px;
+}
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Heading 3", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) h3", loadAllVariants: "true" }
+.heading-3-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 16px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0px;
+}
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Body Text", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent", loadAllVariants: "true" }
+.body-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.8em;
+  letter-spacing: 0px;
+}
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Body Text Color", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent" }
+@bodyTextColor: hsla(0,0%,64%,1);
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Body Link Color", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent a" }
+@bodyLinkColor: #333333;
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Body Link (Hover) Color", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent a" }
+@bodyLinkHoverColor: #787878;
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Body Links", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent a", loadAllVariants: "true" }
+.body-link-font {
+  text-decoration: none;
+}
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Quote Block", "target" : ".quote-block", loadAllVariants: "true" }
+.quote-font {
+  font-family: "proxima-nova", arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6em;
+  text-transform: none;
+}
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Content Background", "target" : "body:not(.collection-type-index):not(.collection-type-gallery) #mainContent" }
+@contentBackground: hsla(0,4%,100%,1);
+
+
+
+/* BLOG STYLES
+---------------------------------------------------*/
+
+// tweak: { "category" : "Blog Styles", "type" : "value", "title" : "Blog Post Spacing", "min" : 0, "max" : 200, "target" : ".collection-type-blog article", "showOnlyWhenPresent" : ".collection-type-blog" }
+@blogPostSpacing: 100px;
+
+// tweak: { "category" : "Blog Styles", "type" : "checkbox", "title" : "Blog Author Display", "active" : "false", "target" : ".collection-type-blog article", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+
+
+/* SOCIAL ICONS
+---------------------------------------------------*/
+
+// tweak: { "category" : "Social Icons", "type" : "color", "title" : "Social Icon Color", "target" : "#sqs-social a", "showOnlyWhenPresent" : "body:not(.tweak-template-social-icon-standard-color) #sqs-social" }
+@socialIconColor: #a8a8a8;
+
+// tweak: { "category" : "Social Icons", "type" : "value", "title" : "Social Icon Size", "min" : 16, "max" : 48, "target" : "#sqs-social a", "showOnlyWhenPresent" : "#sqs-social" }
+@socialIconSize: 20px;
+
+// tweak: { "category" : "Social Icons", "type" : "checkbox", "title" : "Social Icons Display", "active" : "true", "target" : "#header", "showOnlyWhenPresent" : "#sqs-social" }
+
+// tweak: { "category" : "Social Icons", "type" : "dropdown", "title" : "Social Icon Style", "options" : [ "Normal", "Square", "Round" ], "default" : "Normal", "target" : "#sqs-social a", "showOnlyWhenPresent" : "#sqs-social" }
+
+// tweak: { "category" : "Social Icons", "title": "tweak-template-social-icon-standard-color", "label": "Standard Color", "type": "checkbox", "active": false, "showOnlyWhenPresent": "#sqs-social", "target": "#sqs-social a"}
+
+
+
+/* SUMMARY BLOCK STYLES
+---------------------------------------------------*/
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Font", "type" : "font", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+.summary-heading-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Summary Block", "title" : "Summary Block Title Color", "type" : "color", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+@summaryHeadingColor: #666;
+
+
+
+/* Products
+---------------------------------------------------*/
+
+// tweak: { "type" : "checkbox", "title" : "Show Category Navigation", "active" : "false", "target" : "#mainContent, #categoryNav", "showOnlyWhenPresent" : ".collection-type-products", "category" : "Products" }
+
+// tweak: { "type" : "font", "title" : "Category Nav Font", "target" : "#mainContent, #categoryNav", "category" : "Products", "showOnlyWhenPresent" : ".collection-type-products.show-category-navigation" }
+.category-nav-font {
+  font-family: "Helvetica Neue", "Arial", "sans-serif";
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+// tweak: { "type" : "color", "title" : "Category Nav Color", "target" : "#mainContent, #categoryNav", "category" : "Products", "showOnlyWhenPresent" : ".collection-type-products.show-category-navigation" }
+@categoryNavColor: #a8a8a8;
+
+// tweak: { "type" : "color", "title" : "Category Nav Active Color", "target" : "#mainContent, #categoryNav", "category" : "Products", "showOnlyWhenPresent" : ".collection-type-products.show-category-navigation" }
+@categoryNavActiveColor: #333333;
+
+
+
+// --------------------------------------------
+// SVG Icon in Templates
+// For use in templates where social icons are
+// hard coded.
+// --------------------------------------------
+
+// Wrapper Class for SVG Icons
+@social-icons-wrapper: 'social-links';
+
+// Set Icon Custom Color Name from TWEAK
+@social-icons-color: @socialIconColor;
+
+// Set Class name from Standard Color Checkbox
+@social-icons-standard-color: 'tweak-template-social-icon-standard-color';
+
+// Set Icon Size Class Name from TWEAK
+@social-icons-size-custom: @socialIconSize;
+
+// Set Icon Style Class Names from TWEAK
+@social-icons-style-regular:            'social-icon-style-normal';
+@social-icons-style-circle--knockout:   'social-icon-style-round';
+@social-icons-style-rounded--knockout:  'social-icon-style-square';
+
+// These are not in this template, but need to be here or the mixins
+// in svg-icon-templates.less freak out.
+@social-icons-style-circle--border:     'tweak-template-social-icon-style-circle-border';
+@social-icons-style-circle--solid:      'tweak-template-social-icon-style-circle-solid';
+@social-icons-style-square--border:     'tweak-template-social-icon-style-square-border';
+@social-icons-style-square--knockout:   'tweak-template-social-icon-style-square-knockout';
+@social-icons-style-square--solid:      'tweak-template-social-icon-style-square-solid';
+@social-icons-style-rounded--border:    'tweak-template-social-icon-style-rounded-border';
+@social-icons-style-rounded--solid:     'tweak-template-social-icon-style-rounded-solid';
+
+@import 'svg-icon-templates';

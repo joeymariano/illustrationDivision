@@ -1,0 +1,47 @@
+
+<!--MOBILE-->
+{.section items}
+<nav id="mobile-navigation">
+  <ul data-content-field="navigation-mobileNav">
+    {.repeated section @}
+      {.index?}
+        
+        <li class="{.section active} active-link{.end}">
+          <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+        </li>
+
+      {.or folder?}
+
+        <li class="folder {collection.typeLabel}-collection"><a href="{collection.fullUrl}">{collection.navigationTitle}</a></li>
+
+        {.repeated section items}
+          <li class="folder-link {.if folderActive} active-link active-folder{.end}">
+
+            {.section collection}
+              <a href="{fullUrl}">{navigationTitle}</a>
+            {.end}
+
+            {.section externalLink}
+              <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+            {.end}
+
+          </li>
+
+        {.end}
+
+      {.or}
+
+      <li class="{.section active} active-link{.end}">
+        {.section collection}
+          <a href="{fullUrl}">{navigationTitle}</a>
+        {.end}
+        {.section externalLink}
+          <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+        {.end}
+      </li>
+
+      {.end}
+    {.end}
+  </ul>
+</nav>
+{.end}

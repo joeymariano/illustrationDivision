@@ -1,0 +1,66 @@
+<div id="fullscreenBrowser" class="galleryWrapper">
+
+  <div class="slideshowWrapper">
+    <div class="slideshow">
+      {.repeated section items}
+        <div class="slide" data-slide-id="{id}" data-slide-url="{urlId}">
+          <div class="imageWrapper {.if title || body}has-info{.end} {.video?}video{.end}">
+          {.image?}<img {@|image-meta}
+            {.if colorData}
+            data-color-suggestedbg="#{colorData.suggestedBgColor}"
+            data-weight-topleft="{colorData.topLeftAverage|color-weight}"
+            data-weight-topright="{colorData.topRightAverage|color-weight}"
+            data-weight-bottomleft="{colorData.bottomLeftAverage|color-weight}" 
+            data-weight-bottomright="{colorData.bottomRightAverage|color-weight}"
+            data-weight-suggestedbg="{colorData.suggestedBgColor|color-weight}"
+            {.end}
+            data-load="false" data-image-stretch="false"/>{.end}
+          {.video?}{@|video load-false color-data}{.end}
+          </div>
+
+          {.if title || body}
+          <div class="image-detail-wrapper">
+            <h2>{title}</h2>
+            <div class="image-description">{body}</div>
+          </div>
+          {.end}
+        </div>
+      {.end}
+    </div>
+  </div>
+
+  <div id="indexProjects" class="hidden">
+    <div class="index-projects-wrapper">
+      <div class="projects-wrapper">
+        <div class="project {.if collection.description}make-room{.end}">
+          <div class="gallery-description">
+            <h2>{collection.title}</h2>
+            {collection.description}
+          </div>
+          <div class="thumb-grid">
+          {.repeated section items}
+            <div class="thumb content-fit">
+              <div class="yui3-widget sqs-spin visible">
+                <div class="sqs-spin-content yui3-widget-content-expanded"></div>
+              </div>
+              <img {@|image-meta} data-load="false" />
+            </div>
+          {.end}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="nav-projects">
+    <div class="arrow-wrapper left">
+      <a class="nav-button prev-slide" data-direction="L"></a>
+    </div>
+    <div class="arrow-wrapper right">
+      <a class="nav-button next-slide" data-direction="R"></a>
+    </div>
+  </ul>
+
+  <div class="ctrl-button info"><a class="icon-info"></a></div>
+
+</div>
