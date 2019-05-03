@@ -6,7 +6,11 @@
       <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
 
         {.index?}
-          <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          {.equal?:collection.navigationTitle:"home"}
+            <a href="/">{webstie.siteTitle}</a>
+          {.or}
+            <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          {.end}
         {.or folder?}
           <a>{collection.navigationTitle}</a>
           <div class="nav subnav">
@@ -26,7 +30,11 @@
             </ul>
           </div>
         {.or}
-          <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          {.equal?:collection.navigationTitle:"home"}
+            <a href="/">{website.siteTitle}</a>
+          {.or}
+            <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          {.end}
         {.end}
 
       </li>
