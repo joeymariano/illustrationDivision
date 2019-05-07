@@ -17,4 +17,10 @@
     </script>
 
   </div>
-  {.end}<!--
+  {.end}
+
+
+  <!--
+        ul class .controls
+        li elements swap "::before"
+    -->
