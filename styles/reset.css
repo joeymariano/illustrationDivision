@@ -70,7 +70,7 @@ table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 td { vertical-align: top; }
 
 
-/* CUSTOM */
+/* CUSTOM ADDED BY J03Y */
 
 @font-face {
   font-family: 'Engravers Gothic';
@@ -86,4 +86,8 @@ body,a, ul, li,h1,h2,h3,h4,p,div,span,.site-title-text,.entry-title{
 }
 .tweak-blog-list-grid-alignment-baseline article.entry--list, .tweak-blog-list-grid-alignment-top article.entry--list{
   margin-bottom:18px !important;
+}
+
+.chill-margins {
+  margin:0;
 }
