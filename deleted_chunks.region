@@ -1,0 +1,20 @@
+{.section website}
+  <div id="logo" data-content-field="site-title">
+  {.if logoImageUrl}
+    <h1 class="logo logo-image">
+      <a href="/"><img src="{logoImageUrl}?format=750w" alt="{siteTitle}" /></a>
+    </h1>
+  {.or}
+    <h1 class="logo logo-text"><a href="/">{siteTitle}</a></h1>
+  {.end}
+
+    <script>
+      Y.use('squarespace-ui-base', function(Y) {
+        Y.one("#logo h1 a").plug(Y.Squarespace.TextShrink, {
+          parentEl: Y.one('#logo h1')
+        });
+      });
+    </script>
+
+  </div>
+  {.end}<!--

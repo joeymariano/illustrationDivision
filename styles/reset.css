@@ -76,9 +76,9 @@ td { vertical-align: top; }
   font-family: 'Engravers Gothic';
   src: url(https://static1.squarespace.com/static/5ba90aa0ca525b0f838c2277/t/5bbf91707817f79f095c5027/1539281264715/Engravers+Gothic+Regular.otf);
 }
-body,h1,h2,h3,h4,p,div,span,.site-title-text,.entry-title{
+body,a, ul, li,h1,h2,h3,h4,p,div,span,.site-title-text,.entry-title{
   font-family:'Engravers Gothic',arial,ltc-bodoni-175 !important;
-letter-spacing:.075em !important; text-transform:lowercase!important;
+  letter-spacing:.075em !important; text-transform:lowercase!important;
 }
 
 .blog-item-banner-image img{

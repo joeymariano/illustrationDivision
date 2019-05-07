@@ -31,7 +31,7 @@
           </div>
         {.or}
           {.equal?:collection.navigationTitle:"home"}
-            <a href="/">{website.siteTitle}</a>
+            <a href="/"><h1 class="logo logo-text">{website.siteTitle}</h1></a>
           {.or}
             <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
           {.end}

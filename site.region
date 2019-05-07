@@ -18,27 +18,9 @@
 
           <div class="wrapper">
             <span class="ctrl-button menu"><a class="icon-hamburger"></a></span>
-            {.section website}
-              <div id="logo" data-content-field="site-title">
-              {.if logoImageUrl}
-                <h1 class="logo logo-image">
-                  <a href="/"><img src="{logoImageUrl}?format=750w" alt="{siteTitle}" /></a>
-                </h1>
-              {.or}
-                <h1 class="logo logo-text"><a href="/">{siteTitle}</a></h1>
-              {.end}
 
-                <script>
-                  Y.use('squarespace-ui-base', function(Y) {
-                    Y.one("#logo h1 a").plug(Y.Squarespace.TextShrink, {
-                      parentEl: Y.one('#logo h1')
-                    });
-                  });
-                </script>
 
-              </div>{.end}<!--
-
-        --><div id="topNav"><squarespace:navigation navigationId="mainNav" template="navigation" /></div><!--
+        <div id="topNav"><squarespace:navigation navigationId="mainNav" template="navigation" /></div><!--
 
         -->{.section website}{.if socialAccounts}<div id="sqs-social" class="social-links sqs-svg-icon--list" data-content-field="connected-accounts">
               {@|apply sqs-social-links}
