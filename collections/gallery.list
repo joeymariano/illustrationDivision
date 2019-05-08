@@ -10,7 +10,7 @@
             data-color-suggestedbg="#{colorData.suggestedBgColor}"
             data-weight-topleft="{colorData.topLeftAverage|color-weight}"
             data-weight-topright="{colorData.topRightAverage|color-weight}"
-            data-weight-bottomleft="{colorData.bottomLeftAverage|color-weight}" 
+            data-weight-bottomleft="{colorData.bottomLeftAverage|color-weight}"
             data-weight-bottomright="{colorData.bottomRightAverage|color-weight}"
             data-weight-suggestedbg="{colorData.suggestedBgColor|color-weight}"
             {.end}
@@ -20,7 +20,7 @@
 
           {.if title || body}
           <div class="image-detail-wrapper">
-            <h2>{title}</h2>
+            <h2>{collection.title}</h2>
             <div class="image-description">{body}</div>
           </div>
           {.end}

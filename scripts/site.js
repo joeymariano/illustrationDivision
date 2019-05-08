@@ -401,7 +401,7 @@ Y.use('squarespace-gallery-ng', 'squarespace-fullscreen', function(Y) {
         Y.on('key', function(event) { event.preventDefault(); Momentum.ProjectIndex.show(); }, document, 'arrowup');
         Y.on('key', function(event) { event.preventDefault(); Momentum.ProjectIndex.hide(); }, document, 'arrowdown');
         Y.on('key', function(event) {
-          if (infoVisible) {
+          if (zinfoVisible) {
             hideInfo();
           } else {
             showInfo();
