@@ -89,5 +89,9 @@ body,a, ul, li,h1,h2,h3,h4,p,div,span,.site-title-text,.entry-title{
 }
 
 .chill-margins {
-  margin:0;
+  margin:0 !important;
+}
+
+#headerWrapper {
+background-color: rgba(173, 213, 219, 1);
 }
