@@ -95,3 +95,19 @@ body,a, ul, li,h1,h2,h3,h4,p,div,span,.site-title-text,.entry-title{
 #headerWrapper {
 background-color: rgba(173, 213, 219, 1);
 }
+
+.sqs-layout, .sqs-grid-12, .columns-12{
+  width: 100%;
+  padding: 0;
+}
+
+#downArrow {
+  position: fixed; /* Remove the element from normal flow */
+  bottom: auto;
+  z-index: 2;
+  padding: 50%;
+}
+
+#downArrow, img {
+  width: 50px;
+}
