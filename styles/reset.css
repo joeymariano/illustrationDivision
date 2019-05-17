@@ -102,7 +102,7 @@ background-color: rgba(173, 213, 219, 1);
 }
 
 .downArrowContainer {
-  position: fixed; /* Remove the element from normal flow */
+  position: fixed;
   z-index: 2;
   right:50%;
   left:50%;
