@@ -101,13 +101,17 @@ background-color: rgba(173, 213, 219, 1);
   padding: 0;
 }
 
-#downArrow {
+.downArrowContainer {
   position: fixed; /* Remove the element from normal flow */
-  bottom: auto;
   z-index: 2;
-  padding: 50%;
+  right:50%;
+  left:50%;
+  bottom:0;
+  margin:0;
+  padding:0;
+  width:75%;
 }
 
-#downArrow, img {
+#newDownArrow, img {
   width: 50px;
 }
