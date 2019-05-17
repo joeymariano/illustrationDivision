@@ -46,11 +46,19 @@
 
       <div id="pageWrapper">
         {.section collection}
-        {.equal?:fullUrl:"/rosie-mcguiness"}
-        <div class="downArrowContainer">
-            <a href="javascript: scrollTo('.sqs-block-gallery', 725, null);"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.pnghttps://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.png"></a>
-        </div>
-        {.end}
+            {.equal?:urlId:"animations"}
+            {#nothing}
+            {.or equal?:urlId:"about"}
+            {#nothing}
+            {.or equal?:urlId:"contact"}
+            {#nothing}
+            {.or equal?:urlId:"home"}
+            {#nothing}
+            {.or}
+              <div class="downArrowContainer">
+                  <a href="javascript: scrollTo('.sqs-block-gallery', 725, null);"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.pnghttps://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.png"></a>
+              </div>
+            {.end}
         {.end}
         <section id="page">
           <div id="mainContent" role="main" data-content-field="main-content">
