@@ -115,3 +115,7 @@ background-color: rgba(173, 213, 219, 1);
 #newDownArrow, img {
   width: 50px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

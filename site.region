@@ -47,16 +47,17 @@
       <div id="pageWrapper">
         {.section collection}
             {.equal?:urlId:"animations"}
-            {#nothing}
+              {#do nothing}
             {.or equal?:urlId:"about"}
-            {#nothing}
+              {#do nothing}
             {.or equal?:urlId:"contact"}
-            {#nothing}
+              {#do nothing}
             {.or equal?:urlId:"home"}
-            {#nothing}
+              {#do nothing}
             {.or}
+              {#do this =>}
               <div class="downArrowContainer">
-                  <a href="javascript: scrollTo('.sqs-block-gallery', 725, null);"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.pnghttps://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.png"></a>
+                  <a href="javascript: scrollDown('.sqs-block-gallery');"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.pnghttps://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cddd317e958980001012162/1558041367248/Down-Arrow-PNG-HD.png"></a>
               </div>
             {.end}
         {.end}
@@ -168,4 +169,12 @@
 {squarespace-footers}
 
 </body>
+
+<script>
+  function scrollDown(el){
+    document.querySelector(el).scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+</script>
 </html>
