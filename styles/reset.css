@@ -119,3 +119,8 @@ background-color: rgba(173, 213, 219, 1);
 html {
   scroll-behavior: smooth;
 }
+
+
+#mainContent {
+  width: 90% !important;
+}

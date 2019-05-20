@@ -3,9 +3,10 @@
 {.section items}
 <nav id="mobile-navigation">
   <ul data-content-field="navigation-mobileNav">
+                <a href="/">{siteTitle}</a>
     {.repeated section @}
       {.index?}
-        
+
         <li class="{.section active} active-link{.end}">
           <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
         </li>
