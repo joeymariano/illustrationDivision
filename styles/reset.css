@@ -70,7 +70,12 @@ table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 td { vertical-align: top; }
 
 
-/* CUSTOM ADDED BY J03Y */
+/*
+    Custom Code for Illustration Division by Ms. Joey Michalina Mariano
+    joeymariano.com
+    illustrationdivision.com
+*/
+
 
 @font-face {
   font-family: 'Engravers Gothic';
@@ -123,8 +128,4 @@ html {
 
 #mainContent {
   width: 90% !important;
-}
-
-.sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic{
-  margin: 0 !important;
 }

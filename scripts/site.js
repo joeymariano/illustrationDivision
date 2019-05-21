@@ -1226,3 +1226,18 @@ Y.use('squarespace-gallery-ng', 'squarespace-fullscreen', function(Y) {
     return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
   };
 });
+
+
+//    Custom Code for Illustration Division by Ms. Joey Michalina Mariano
+//    joeymariano.com
+//    illustrationdivision.com
+
+function scrollDown(el_name){
+  let element = document.querySelector(el_name)
+  let headerHeight = document.querySelector('#header').offsetHeight
+  let elementY = element.getBoundingClientRect().y
+
+  let destination = elementY - headerHeight
+
+  scrollTo(0, destination);
+}
