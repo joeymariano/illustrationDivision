@@ -129,3 +129,7 @@ html {
 #mainContent {
   width: 90% !important;
 }
+
+.sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic {
+  margin: 0 !important;
+}
