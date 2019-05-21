@@ -1233,11 +1233,21 @@ Y.use('squarespace-gallery-ng', 'squarespace-fullscreen', function(Y) {
 //    illustrationdivision.com
 
 function scrollDown(el_name){
+  // define some variables
+
   let element = document.querySelector(el_name)
   let headerHeight = document.querySelector('#header').offsetHeight
   let elementY = element.getBoundingClientRect().y
+  // let totalHeight = document.documentElement.offsetHeight
+  // let browserScrollPosition = document.documentElement.offsetHeight
 
+  // calculate scroll destination
   let destination = elementY - headerHeight
 
-  scrollTo(0, destination);
+  scrollTo(0, destination, deleteArrow());
+}
+
+function deleteArrow(){
+  let element = document.querySelector('.downArrowContainer')
+  element.parentNode.removeChild(element)
 }
