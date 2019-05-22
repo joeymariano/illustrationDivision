@@ -134,7 +134,7 @@ html {
   margin: 0 !important;
 }
 
-.yui3-lightbox2 .sqs-lightbox-slideshow .sqs-lightbox-padder {
+.sqs-lightbox-padder {
   background-color: white;
 }
 
