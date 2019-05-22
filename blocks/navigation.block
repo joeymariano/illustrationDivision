@@ -6,7 +6,7 @@
       <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
 
         {.index?}
-          {.equal?:collection.navigationTitle:"artists"}
+          {.equal?:collection.navigationTitle:"home"}
             <a href="/">{webstie.siteTitle}</a>
           {.or}
             <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
