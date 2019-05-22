@@ -133,3 +133,11 @@ html {
 .sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic {
   margin: 0 !important;
 }
+
+.yui3-lightbox2 .sqs-lightbox-slideshow .sqs-lightbox-padder {
+  background-color: white;
+}
+
+.sqs-gallery-design-stacked-slide {
+  background-color: white;
+}
