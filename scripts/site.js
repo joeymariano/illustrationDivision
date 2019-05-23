@@ -1233,8 +1233,6 @@ Y.use('squarespace-gallery-ng', 'squarespace-fullscreen', function(Y) {
 //    illustrationdivision.com
 
 function scrollDown(el_name){
-  // define some variables
-
   let element = document.querySelector(el_name)
   let headerHeight = document.querySelector('#header').offsetHeight
   let elementY = element.getBoundingClientRect().y
@@ -1244,21 +1242,17 @@ function scrollDown(el_name){
   // calculate scroll destination
   let destination = elementY - headerHeight
 
-  scrollTo(0, destination, deleteArrow());
+  scrollTo(0, destination, fadeAndDeleteArrow('.downArrowContainer'));
 }
 
-function deleteArrow(){
-  let element = document.querySelector('.downArrowContainer')
-  fadeAndDelete(element)
-}
-
-function fadeAndDelete(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
+function fadeAndDeleteArrow(el) {
+    let element = document.querySelector(el)
+    let op = 1;  // initial opacity
+    let timer = setInterval(function () {
         if (op <= 0.1){
             clearInterval(timer);
             element.style.display = 'none';
-            element.parentNode.removeChild(element)
+            element.parentNode.removeChild(element) // delete when done
         }
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
