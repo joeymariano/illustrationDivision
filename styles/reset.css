@@ -142,3 +142,11 @@ html {
 .sqs-gallery-design-stacked-slide {
   background-color: white;
 }
+
+.image-block-wrapper{
+  width:79% !important;
+}
+
+.intrinsic {
+  max-width: none !important;
+}
