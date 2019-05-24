@@ -143,8 +143,11 @@ html {
   background-color: white;
 }
 
+/* for bio pic */
+
 .image-block-wrapper{
   width:79% !important;
+  height: 100% !important;
 }
 
 .intrinsic {
