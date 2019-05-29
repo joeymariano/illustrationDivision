@@ -1239,10 +1239,7 @@ function scrollDown(el_name){
   // let totalHeight = document.documentElement.offsetHeight
   // let browserScrollPosition = document.documentElement.offsetHeight
 
-  // calculate scroll destination
-  let destination = elementY - headerHeight
-
-  scrollTo(0, destination, fadeAndDeleteArrow('.downArrowContainer'));
+  scrollTo(0, elementY, fadeAndDeleteArrow('.downArrowContainer'));
 }
 
 function fadeAndDeleteArrow(el) {
