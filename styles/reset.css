@@ -142,6 +142,10 @@ html {
   width: 100% !important;
 }
 
+#page{
+  width: 100% !important;
+}
+
 /* for lightbox */
 
 .sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic {
