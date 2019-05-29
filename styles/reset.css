@@ -142,8 +142,8 @@ html {
   width: 100% !important;
 }
 
-#page{
-  width: 100% !important;
+body:not(.collection-type-index):not(.collection-type-gallery) #mainContent{
+  width: 90% !important;
 }
 
 /* for lightbox */
