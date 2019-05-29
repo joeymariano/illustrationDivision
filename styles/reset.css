@@ -125,11 +125,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* make content full width */
+
+
+#headerWrapper {
+  position:relative !important;
+}
 
 #mainContent {
-  width: 90% !important;
-  margin-top: 9% !important;
+  margin-top: none !important;
+  margin: 5% auto !important;
+  padding: 0 !important;
 }
+
+#page:before {
+  width: 100% !important;
+}
+
+/* for lightbox */
 
 .sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic {
   margin: 0 !important;
@@ -162,4 +175,10 @@ html {
 
 .sqs-lightbox-previous:before {
   content: url(https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ceeb3c2fa0d60799c7852c4/1559147458238/left-arrow.png) !important;
+}
+
+/* bring the header up */
+
+.header-wrapper {
+  z-index: 999999999 !important;
 }
