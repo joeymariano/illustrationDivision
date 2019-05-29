@@ -153,3 +153,13 @@ html {
 .intrinsic {
   max-width: none !important;
 }
+
+/* for darker arrows */
+
+.sqs-lightbox-next:before {
+  content: url(https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ceeb3caa4222fd3b1172104/1559147466835/right-arrow.png) !important;
+}
+
+.sqs-lightbox-previous:before {
+  content: url(https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ceeb3c2fa0d60799c7852c4/1559147458238/left-arrow.png) !important;
+}
