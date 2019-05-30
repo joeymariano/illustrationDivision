@@ -146,6 +146,10 @@ body:not(.collection-type-index):not(.collection-type-gallery) #mainContent{
   width: 90% !important;
 }
 
+body.page-titledescription:not(.view-item) #page-title {
+  display:none !important;
+}
+
 /* for lightbox */
 
 .sqs-block-image .image-block-outer-wrapper:not(.image-block-v2) .intrinsic {

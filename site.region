@@ -18,7 +18,25 @@
 
           <div class="wrapper">
             <span class="ctrl-button menu"><a class="icon-hamburger"></a></span>
+            {.section website}
+              <div id="logo" data-content-field="site-title">
+              {.if logoImageUrl}
+                <h1 class="logo logo-image">
+                  <a href="/"><img src="{logoImageUrl}?format=750w" alt="{siteTitle}" /></a>
+                </h1>
+              {.or}
+                <h1 class="logo logo-text logo-mobile"><a href="/">{siteTitle}</a></h1>
+              {.end}
 
+                <script>
+                  Y.use('squarespace-ui-base', function(Y) {
+                    Y.one("#logo h1 a").plug(Y.Squarespace.TextShrink, {
+                      parentEl: Y.one('#logo h1')
+                    });
+                  });
+                </script>
+
+              </div>{.end}
 
         <div id="topNav"><squarespace:navigation navigationId="mainNav" template="navigation" /></div><!--
 
@@ -45,22 +63,6 @@
       </div>
 
       <div id="pageWrapper">
-        {.section collection}
-            {.equal?:urlId:"animations"}
-              {#do nothing}
-            {.or equal?:urlId:"about"}
-              {#do nothing}
-            {.or equal?:urlId:"contact"}
-              {#do nothing}
-            {.or equal?:urlId:"home"}
-              {#do nothing}
-            {.or}
-              {#do this =>}
-              <div class="downArrowContainer">
-                <a href="javascript: scrollDown('.sqs-block-gallery');"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ce5d897b208fc5f78b92e4e/1558567063018/Down-Arrow-PNG-HD.png"></a>
-              </div>
-            {.end}
-        {.end}
         <section id="page">
           <div id="mainContent" role="main" data-content-field="main-content">
             {.section collection}
@@ -93,12 +95,12 @@
               {.end}
             {.or}
               <div class="page-settings" data-collection-id="{id}">
-                <!-- <h1 id="page-title" >
-                  {#title}
+                <h1 id="page-title" >
+                  {title}
                 </h1>
                 <div id="page-description">
-                  {#description}
-                </div> -->
+                  {description}
+                </div>
               </div>
             {.end}
             {.end}
