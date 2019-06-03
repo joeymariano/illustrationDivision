@@ -187,6 +187,10 @@ body.page-titledescription:not(.view-item) #page-title {
   content: url(https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ceeb3c2fa0d60799c7852c4/1559147458238/left-arrow.png) !important;
 }
 
+.sqs-lightbox-close:before {
+  content: url(https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5cf581e5a86bb7000124b3c8/1559593445762/close_black_32x32.png) !important;
+}
+
 /* bring the header up */
 
 .header-wrapper {
