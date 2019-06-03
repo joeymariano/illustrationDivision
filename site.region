@@ -63,6 +63,22 @@
       </div>
 
       <div id="pageWrapper">
+        {.section collection}
+              {.equal?:urlId:"animations"}
+                {#do nothing}
+              {.or equal?:urlId:"about"}
+                {#do nothing}
+              {.or equal?:urlId:"contact"}
+                {#do nothing}
+              {.or equal?:urlId:"home"}
+                {#do nothing}
+              {.or}
+                {#do this =>}
+                <div class="downArrowContainer">
+                    <a href="javascript: scrollDown('.sqs-block-gallery');"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ce5d897b208fc5f78b92e4e/1558567063018/Down-Arrow-PNG-HD.png"></a>
+                </div>
+              {.end}
+          {.end}
         <section id="page">
           <div id="mainContent" role="main" data-content-field="main-content">
             {.section collection}
