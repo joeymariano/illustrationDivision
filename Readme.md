@@ -4,9 +4,9 @@ IllustrationDivision.com
 ======
 **IllustrationDivision.com** showcases 50 NYC illustrators and their work.
 
-* Running on SquareSpace: [squareSpace](https://www.squarespace.com)
+* Running on SquareSpace: [squareSpace.com](https://www.squarespace.com)
 
-* copyright IllustrationDivision.com and [squareSpace](https://art-dept.com/)
+* copyright [IllustrationDivision.com](https://www.illustrationdivision.com) and [art-dept.com](https://art-dept.com/)
 
 # Specs
 
