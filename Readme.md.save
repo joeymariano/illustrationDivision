@@ -1,0 +1,36 @@
+![illustrationDivision](http://illustrationdivision.com/uploads/19200192/1522082747205/Gug)
+
+Show-Finder
+======
+**Show-Finder.com** queries Songkick.com and Bandsintown.com for artists and concerts.
+Users can login, save band queries and like artists.
+
+* Running on Heroku: [show-finder.com](https://www.show-finder.com)
+
+* copyright Joey Michalina Mariano 2018
+
+# Specs
+
+* Ruby version 2.5.1rak
+
+* Rails API v. 5.1.6 back end
+  - Active Model Serializers
+  - Bcrypt
+  - Foreman
+
+* React ^16.6.0 front end
+  - React Cookie
+  - React Router
+  - Redux
+  - Redux Thunk middleware
+
+* Production mode avoids all CORS due to buildpack copying contents of /client to /public after npm build npm start
+
+# Usage
+
+* Install
+  - clone / download
+  - rake db:create
+  - rake db:migrate
+  - rake start (starts dev server)
+

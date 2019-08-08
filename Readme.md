@@ -17,3 +17,5 @@ IllustrationDivision.com
 # Usage
 
 * Please see: SquareSpace Server npm package
+
+* squarespace-server https://bat-ladybug-tbha.uarespace.com --auth -p 3000
