@@ -203,4 +203,8 @@ body.page-titledescription:not(.view-item) #page-title {
   #header #logo .logo-text a {
     font-weight: 100 !important;
   }
+
+  #mainContent {
+    margin-top: -60px !important
+  }
 }
