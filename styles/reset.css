@@ -197,14 +197,4 @@ body.page-titledescription:not(.view-item) #page-title {
   z-index: 999999999 !important;
 }
 
-/* chill on the mobile header boldness */
 
-@media only screen and (max-width: 736px) {
-  #header #logo .logo-text a {
-    font-weight: 100 !important;
-  }
-
-  #mainContent {
-    margin-top: -60px !important
-  }
-}

@@ -1256,3 +1256,63 @@ function fadeAndDeleteArrow(el) {
         op -= op * 0.1;
     }, 50);
 }
+
+var noScroll = function() {
+
+  window.scrollTo(0, 0);
+
+  let html = document.getElementById("html");
+  let body = document.getElementById("body");
+
+  html.css('margin', '0')
+  html.css('height', '100%')
+  html.css('overflow', 'hidden')
+
+  body.css('margin', '0')
+  body.css('height', '100%')
+  body.css('overflow', 'hidden')
+
+  // html, body {margin: 0; height: 100%; overflow: hidden}
+}
+
+
+// function stretchImage(placeImage) {
+
+//     // hide text containing 1,2,3,4 steps
+//     let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
+//     howWeWork.style.display = 'none'
+
+//     let headerWrapper = document.getElementById('headerWrapper')
+
+//     // calculate the header height = y starting point
+//     let yStart = headerWrapper.offsetHeight
+//     // calculate total height = y stopping point
+//     let winHeight = window.innerHeight
+//     // calculate 100% of screen width = x stopping point
+//     let winWidth = window.innerWidth
+//     // calculate 25% screen width = x starting point
+//     let xStart = winWidth / 4
+
+//     let image = document.getElementsByTagName('img')[0]
+//     debugger
+//     image.style.position = "fixed !important"
+//     image.style.y = '0 !important'
+//     image.style.x = '0 !important'
+// }
+
+/*
+css to move image-block-wrapper
+higher level elements may need their position commands deleted?
+
+image-block-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: -70px !important;
+    right: -44px !important;
+  }
+
+  .sqs-block {
+    position: sticky;
+  }
+*/

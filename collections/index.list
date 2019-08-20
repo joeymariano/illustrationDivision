@@ -71,3 +71,8 @@
   <div class="ctrl-button info"><a class="icon-info"></a></div>
 
 {.end}
+
+<script>
+// add listener to disable scroll
+window.addEventListener('scroll', noScroll);
+</script>
