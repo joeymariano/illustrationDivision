@@ -197,4 +197,28 @@ body.page-titledescription:not(.view-item) #page-title {
   z-index: 999999999 !important;
 }
 
+/* center nav regaurless of 1 social icon */
 
+#topNav{
+  padding-right: 0 !important;
+}
+
+/* ipad header adjustment */
+
+@media only screen and (min-width: 734px) and (max-width: 835px){
+  h1, h1 a{
+    font-size: 24px !important;
+  }
+}
+
+/* chill on the mobile header boldness */
+
+@media only screen and (max-width: 736px) {
+  #header #logo .logo-text a {
+    font-weight: 100 !important;
+  }
+
+  #mainContent {
+    margin-top: -60px !important
+  }
+}

@@ -191,9 +191,11 @@
 // if url is on about page
 if (window.location.href.indexOf("about") > -1) {
   stretchImage()
+  
+  window.addEventListener("resize", stretchImage);
 }
 
-window.addEventListener("resize", stretchImage);
+
 
 function stretchImage() {
   // hide How We Work text
@@ -211,7 +213,7 @@ function stretchImage() {
   image.style.setProperty('position', 'fixed')
   image.style.setProperty('z-index', '-999')
 
-  image.style.setProperty('top', headerHeight.toString() + 'px')
+  // image.style.setProperty('top', headerHeight.toString() + 'px')
   image.style.setProperty('left', xStart.toString() + 'px')
 }
 </script>
