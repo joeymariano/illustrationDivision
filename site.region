@@ -188,30 +188,29 @@
 
 <script>
 
-stretchImage()
+// if url is on about page
+if (window.location.href.indexOf("about") > -1) {
+  stretchImage()
+}
+
+function stretchImage() {
+  // hide text containing 1,2,3,4 steps
+  let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
+  howWeWork.style.display = 'none'
+
+  let headerHeight = document.getElementsByTagName('header')[0].offsetHeight
+  // calculate 100% of screen width = x stopping point
+  let winWidth = window.innerWidth
+  let xStart = winWidth / 4
 
 
-function stretchImage(placeImage) {
+  let image = document.getElementsByTagName('img')[0]
 
-    // // hide text containing 1,2,3,4 steps
-    // let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
-    // howWeWork.style.display = 'none'
+  image.style.setProperty('position', 'fixed')
+  image.style.setProperty('z-index', '-999')
 
-    // let headerWrapper = document.getElementById('headerWrapper')
-
-    // // calculate the header height = y starting point
-    // let yStart = headerWrapper.offsetHeight
-    // // calculate total height = y stopping point
-    // let winHeight = window.innerHeight
-    // // calculate 100% of screen width = x stopping point
-    // let winWidth = window.innerWidth
-    // // calculate 25% screen width = x starting point
-    // let xStart = winWidth / 4
-
-    let image = document.getElementsByTagName('img')[0]
-
-    image.style.setProperty('position', 'fixed')
-    image.style.setProperty('zIndex', '-999')
+  image.style.setProperty('top', headerHeight.toString() + 'px')
+  image.style.setProperty('left', xStart.toString() + 'px')
 }
 </script>
 
