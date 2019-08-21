@@ -193,16 +193,18 @@ if (window.location.href.indexOf("about") > -1) {
   stretchImage()
 }
 
+window.addEventListener("resize", stretchImage);
+
 function stretchImage() {
-  // hide text containing 1,2,3,4 steps
+  // hide How We Work text
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.display = 'none'
 
   let headerHeight = document.getElementsByTagName('header')[0].offsetHeight
+
   // calculate 100% of screen width = x stopping point
   let winWidth = window.innerWidth
   let xStart = winWidth / 4
-
 
   let image = document.getElementsByTagName('img')[0]
 
