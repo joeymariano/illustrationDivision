@@ -1273,6 +1273,12 @@ function stretchImage() {
   image.style.setProperty('position', 'fixed')
   image.style.setProperty('z-index', '-999')
 
-  image.style.setProperty('top', headerHeight.toString() + 'px')
+  image.style.setProperty('top', '0')
   image.style.setProperty('left', xStart.toString() + 'px')
+
+  //
+
+  let paragraph = document.getElementsByTagName('p')[0]
+  paragraph.style.setProperty('margin-right', winWidth/18 + 'px')
+
 }
