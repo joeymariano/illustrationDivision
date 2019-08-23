@@ -1262,23 +1262,31 @@ function stretchImage() {
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.display = 'none'
 
-  let headerHeight = document.getElementsByTagName('header')[0].offsetHeight
+  let html = document.getElementsByTagName('html')[0]
+  html.style.setProperty('overflow', 'hidden')
 
-  // calculate 100% of screen width = x stopping point
+  // imag reposition
   let winWidth = window.innerWidth
-  let xStart = winWidth / 4
-
+  let xStart = (winWidth / 4) 
   let image = document.getElementsByTagName('img')[0]
-
   image.style.setProperty('position', 'fixed')
   image.style.setProperty('z-index', '-999')
-
   image.style.setProperty('top', '0')
   image.style.setProperty('left', xStart.toString() + 'px')
+  image.style.setProperty('max-height', window.innerHeight)
 
-  //
-
+  // paragraph manipulation
   let paragraph = document.getElementsByTagName('p')[0]
-  paragraph.style.setProperty('margin-right', winWidth/18 + 'px')
+  paragraph.style.setProperty('margin-right', winWidth/16 + 'px')
+  paragraph.style.setProperty('font-size', '.8em')
+  paragraph.style.setProperty('text-align', 'justify')
 
+  // rotate about us
+  let aboutUs = document.getElementsByTagName('h1')[3]
+  aboutUs.style.setProperty('transform-origin', 'left')  
+  aboutUs.style.setProperty('transform', 'rotate(-90deg)')
+  aboutUs.style.setProperty('position', 'sticky')
+  aboutUs.style.setProperty('top', '0')
+  aboutUs.style.setProperty('left', '0')
+  aboutUs.style.setProperty('margin-top', '175px')
 }
