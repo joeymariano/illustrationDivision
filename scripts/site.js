@@ -1267,17 +1267,18 @@ function stretchImage() {
 
   // imag reposition
   let winWidth = window.innerWidth
-  let xStart = (winWidth / 4) 
+  let xStart = (winWidth / 3) 
   let image = document.getElementsByTagName('img')[0]
   image.style.setProperty('position', 'fixed')
   image.style.setProperty('z-index', '-999')
   image.style.setProperty('top', '0')
   image.style.setProperty('left', xStart.toString() + 'px')
-  image.style.setProperty('max-height', window.innerHeight)
+  image.style.setProperty('height', window.innerHeight)
 
   // paragraph manipulation
   let paragraph = document.getElementsByTagName('p')[0]
-  paragraph.style.setProperty('margin-right', winWidth/16 + 'px')
+  paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
+  paragraph.style.setProperty('padding', '0')
   paragraph.style.setProperty('font-size', '.8em')
   paragraph.style.setProperty('text-align', 'justify')
 
@@ -1289,4 +1290,5 @@ function stretchImage() {
   aboutUs.style.setProperty('top', '0')
   aboutUs.style.setProperty('left', '0')
   aboutUs.style.setProperty('margin-top', '175px')
+
 }
