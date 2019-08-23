@@ -187,11 +187,13 @@
 {squarespace-footers}
 
 <script>
-  if (window.location.href.indexOf("about") > -1) {
-    stretchImage()
-  }
-
+// if url is on about page
+if (window.location.href.indexOf("about") > -1) {
+  stretchImage()
+  
   window.addEventListener("resize", stretchImage);
+}
+
 </script>
 
 </body>

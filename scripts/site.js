@@ -1262,6 +1262,7 @@ function stretchImage() {
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.display = 'none'
 
+  // kill scroll
   let html = document.getElementsByTagName('html')[0]
   html.style.setProperty('overflow', 'hidden')
 
