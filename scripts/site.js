@@ -1256,3 +1256,23 @@ function fadeAndDeleteArrow(el) {
         op -= op * 0.1;
     }, 50);
 }
+
+function stretchImage() {
+  // hide How We Work text
+  let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
+  howWeWork.style.display = 'none'
+
+  let headerHeight = document.getElementsByTagName('header')[0].offsetHeight
+
+  // calculate 100% of screen width = x stopping point
+  let winWidth = window.innerWidth
+  let xStart = winWidth / 4
+
+  let image = document.getElementsByTagName('img')[0]
+
+  image.style.setProperty('position', 'fixed')
+  image.style.setProperty('z-index', '-999')
+
+  image.style.setProperty('top', headerHeight.toString() + 'px')
+  image.style.setProperty('left', xStart.toString() + 'px')
+}
