@@ -192,6 +192,8 @@ if (window.location.href.indexOf("about") > -1) {
   stretchImage()
   
   window.addEventListener("resize", stretchImage);
+
+  
 }
 
 </script>

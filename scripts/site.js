@@ -1283,13 +1283,23 @@ function stretchImage() {
   paragraph.style.setProperty('font-size', '.8em')
   paragraph.style.setProperty('text-align', 'justify')
 
-  // rotate about us
-  let aboutUs = document.getElementsByTagName('h1')[3]
-  aboutUs.style.setProperty('transform-origin', 'left')  
-  aboutUs.style.setProperty('transform', 'rotate(-90deg)')
-  aboutUs.style.setProperty('position', 'sticky')
-  aboutUs.style.setProperty('top', '0')
-  aboutUs.style.setProperty('left', '0')
-  aboutUs.style.setProperty('margin-top', '175px')
+  // need to calculate middle of empty space
+  let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
+  let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
+  let screenHeight = window.innerHeight
 
+  // rotate about us + place header 'about us'
+  let aboutUs = document.getElementsByTagName('h1')[3]
+  let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
+
+  // GET DIFF BETWEEN SCREEN HEIGHT AND PARABTM
+  // ADD HALF OF THAT TO PARABTM
+  let midVal = screenHeight - btmPara
+  let targetPlace = (Math.ceil(btmPara + midVal) - aboutUsWidth/2)
+
+  aboutUs.style.setProperty('position', 'fixed')
+  aboutUs.style.setProperty('left', leftPara.toString() + 'px')
+  aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
+  aboutUs.style.setProperty('transform-origin', 'left')
+  aboutUs.style.setProperty('transform', 'rotate(-90deg)')
 }
