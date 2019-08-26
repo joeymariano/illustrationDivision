@@ -1257,7 +1257,7 @@ function fadeAndDeleteArrow(el) {
     }, 50);
 }
 
-function stretchImage() {
+function aboutPageLayout() {
   // hide How We Work text
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.display = 'none'
@@ -1266,7 +1266,7 @@ function stretchImage() {
   let html = document.getElementsByTagName('html')[0]
   html.style.setProperty('overflow', 'hidden')
 
-  // imag reposition
+  // image reposition
   let winWidth = window.innerWidth
   let xStart = (winWidth / 3) 
   let image = document.getElementsByTagName('img')[0]
@@ -1295,11 +1295,41 @@ function stretchImage() {
   // GET DIFF BETWEEN SCREEN HEIGHT AND PARABTM
   // ADD HALF OF THAT TO PARABTM
   let midVal = screenHeight - btmPara
-  let targetPlace = (Math.ceil(btmPara + midVal) - aboutUsWidth/2)
+  let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
 
   aboutUs.style.setProperty('position', 'fixed')
   aboutUs.style.setProperty('left', leftPara.toString() + 'px')
   aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
   aboutUs.style.setProperty('transform-origin', 'left')
   aboutUs.style.setProperty('transform', 'rotate(-90deg)')
+}
+
+function maintainAboutLayout() {
+   // image reposition
+  let winWidth = window.innerWidth
+  let xStart = (winWidth / 3) 
+  let image = document.getElementsByTagName('img')[0]
+  image.style.setProperty('left', xStart.toString() + 'px')
+  image.style.setProperty('height', window.innerHeight)
+
+  // paragraph manipulation
+  let paragraph = document.getElementsByTagName('p')[0]
+  paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
+
+  // need to calculate middle of empty space
+  let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
+  let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
+  let screenHeight = window.innerHeight
+
+  // rotate about us + place header 'about us'
+  let aboutUs = document.getElementsByTagName('h1')[3]
+  let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
+
+  // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
+  // ADD HALF OF THAT TO PARABTM
+  let midVal = screenHeight - btmPara
+  let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
+
+  aboutUs.style.setProperty('left', leftPara.toString() + 'px')
+  aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
 }
