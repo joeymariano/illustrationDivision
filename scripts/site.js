@@ -1258,35 +1258,28 @@ function fadeAndDeleteArrow(el) {
 }
 
 function aboutPageLayout() {
-  // hide How We Work text
-  let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
-  howWeWork.style.display = 'none'
-
-  // kill scroll
-  let html = document.getElementsByTagName('html')[0]
-  html.style.setProperty('overflow', 'hidden')
 
   // image reposition
-  let winWidth = window.innerWidth
-  let xStart = (winWidth / 3) 
+  let page = document.getElementById('page')
   let image = document.getElementsByTagName('img')[0]
-  image.style.setProperty('position', 'fixed')
+  page.appendChild(image)
+  let xStart = (window.innerWidth / 3) 
   image.style.setProperty('z-index', '-999')
   image.style.setProperty('top', '0')
   image.style.setProperty('left', xStart.toString() + 'px')
-  image.style.setProperty('height', window.innerHeight)
+  image.style.setProperty('width', ((window.innerWidth / 3)*2 - 14)  + 'px')
+  image.style.setProperty('height', window.innerHeight + 'px')
 
   // paragraph manipulation
   let paragraph = document.getElementsByTagName('p')[0]
-  paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
+  paragraph.style.setProperty('margin-right', -window.innerWidth/40 + 'px')
   paragraph.style.setProperty('padding', '0')
   paragraph.style.setProperty('font-size', '.8em')
   paragraph.style.setProperty('text-align', 'justify')
 
   // need to calculate middle of empty space
   let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
-  let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
-  let screenHeight = window.innerHeight
+  let leftPara = Math.ceil(paragraph.getBoundingClientRect().left) 
 
   // rotate about us + place header 'about us'
   let aboutUs = document.getElementsByTagName('h1')[3]
@@ -1294,10 +1287,10 @@ function aboutPageLayout() {
 
   // GET DIFF BETWEEN SCREEN HEIGHT AND PARABTM
   // ADD HALF OF THAT TO PARABTM
-  let midVal = screenHeight - btmPara
+  let midVal = window.innerHeight - btmPara
   let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
 
-  aboutUs.style.setProperty('position', 'fixed')
+  aboutUs.style.setProperty('position', 'absolute')
   aboutUs.style.setProperty('left', leftPara.toString() + 'px')
   aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
   aboutUs.style.setProperty('transform-origin', 'left')

@@ -192,7 +192,7 @@
 // need to check if screen width is at least 800?
 if (window.location.href.indexOf("about") > -1) {
   aboutPageLayout()
-  window.addEventListener("resize", maintainAboutLayout)
+  // window.addEventListener("resize", maintainAboutLayout)
 }
 
 </script>
