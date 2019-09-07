@@ -1292,7 +1292,23 @@ function aboutPageLayout() {
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.setProperty('position', 'absolute')
   howWeWork.style.setProperty('top', (window.innerHeight - 100) + 'px')
+  howWeWork.style.setProperty('left', '0')
+  howWeWork.style.setProperty('right', '0')
+  howWeWork.style.setProperty('margin-right', 'auto')
+  howWeWork.style.setProperty('margin-left', 'auto')
   howWeWork.style.setProperty('padding-bottom', '100px')
+
+  // adjust paragraphs in how-we-work
+  let h3Width = document.getElementsByTagName('h3')[4].innerWidth
+  let paragraphHowWeWork = []
+  document.getElementsByTagName('p').forEach(function (el, index){
+    if (index !== 0){
+    paragraphHowWeWork.push(el)}
+  })
+  paragraphHowWeWork.forEach(function (el){
+    el.style.setProperty('width', '250px')
+    el.style.setProperty('margin', '0 auto')
+  })
 }
 
 // function maintainAboutLayout() {
