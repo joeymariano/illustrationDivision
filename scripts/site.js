@@ -1291,7 +1291,7 @@ function aboutPageLayout() {
   // move how-we-work
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   howWeWork.style.setProperty('position', 'absolute')
-  howWeWork.style.setProperty('top', window.innerHeight + 'px')
+  howWeWork.style.setProperty('top', (window.innerHeight - 100) + 'px')
 }
 
 // function maintainAboutLayout() {

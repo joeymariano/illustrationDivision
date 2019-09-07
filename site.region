@@ -187,14 +187,14 @@
 {squarespace-footers}
 
 <script>
-// if url is on about page
-// need to check if screen height is at least 710?
-// need to check if screen width is at least 800?
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 if (window.location.href.indexOf("about") > -1) {
   aboutPageLayout()
   // window.addEventListener("resize", maintainAboutLayout)
 }
-
 </script>
 
 </body>
