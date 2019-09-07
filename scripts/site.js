@@ -1306,8 +1306,25 @@ function aboutPageLayout() {
     paragraphHowWeWork.push(el)}
   })
   paragraphHowWeWork.forEach(function (el){
-    el.style.setProperty('width', '250px')
+    el.style.setProperty('width', '300px')
     el.style.setProperty('margin', '0 auto')
+  })
+
+  // append numbers
+  document.getElementsByTagName('h3').forEach(function (el, index){
+    let numbDiv = document.createElement('div')
+    let numbDivText = document.createTextNode('0' + (index + 1));
+    numbDiv.appendChild(numbDivText)
+    el.prepend(numbDiv)
+    // numbDiv.style.setProperty('float', 'left')
+    if (index % 2 === 0){
+    numbDiv.style.setProperty('margin-left', '-500px')
+    } else {
+          numbDiv.style.setProperty('margin-right', '-500px')
+    }
+    numbDiv.style.setProperty('position', 'inline')
+    numbDiv.style.setProperty('font-size', '5em')
+    numbDiv.style.setProperty('font-weight', 'lighter')
   })
 }
 
