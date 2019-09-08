@@ -1258,7 +1258,6 @@ function fadeAndDeleteArrow(el) {
 }
 
 function aboutPageLayout() {
-
   //get header height
   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
 
@@ -1298,16 +1297,25 @@ function aboutPageLayout() {
   howWeWork.style.setProperty('margin-left', 'auto')
   howWeWork.style.setProperty('padding-bottom', '100px')
 
+  //padding offset for shifting elements left and right
+  let paddingOffset = 300
+
   // adjust paragraphs in how-we-work
-  let h3Width = document.getElementsByTagName('h3')[4].innerWidth
   let paragraphHowWeWork = []
   document.getElementsByTagName('p').forEach(function (el, index){
     if (index !== 0){
     paragraphHowWeWork.push(el)}
   })
-  paragraphHowWeWork.forEach(function (el){
-    el.style.setProperty('width', '300px')
-    el.style.setProperty('margin', '0 auto')
+  paragraphHowWeWork.forEach(function (el, index){
+    if (index % 2 === 0){
+      el.style.setProperty('width', '300px')
+      el.style.setProperty('margin', '0 auto')
+      el.style.setProperty('padding-left', paddingOffset + 'px')
+    } else {
+      el.style.setProperty('width', '300px')
+      el.style.setProperty('margin', '0 auto')
+      el.style.setProperty('padding-right', paddingOffset +'px')
+    }
   })
 
   // append numbers
@@ -1321,18 +1329,20 @@ function aboutPageLayout() {
     numbDiv.style.setProperty('font-size', '5em')
     numbDiv.style.setProperty('font-weight', 'lighter')
 
-    if (index !== 4){
-      numbDiv.style.setProperty('margin-top', '50px') 
-    }
+
+    numbDiv.style.setProperty('margin-top', '50px') 
+
 
     if (index % 2 === 0){
-      numbDiv.style.setProperty('left', (window.innerWidth/2 - 400) + 'px')
+      numbDiv.style.setProperty('left', (window.innerWidth/2 - 300) + 'px')
+      el.style.setProperty('padding-left', paddingOffset + 'px')
     } else {
-      debugger
-      numbDiv.style.setProperty('right', (window.innerWidth/2 - 400) + 'px')
+      numbDiv.style.setProperty('right', (window.innerWidth/2 - 300) + 'px')
       numbDiv.style.setProperty('display', 'inline')
+      el.style.setProperty('padding-right', paddingOffset +'px')
     }
   })
+ 
 }
 
 // function maintainAboutLayout() {
