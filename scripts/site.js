@@ -1316,15 +1316,22 @@ function aboutPageLayout() {
     let numbDivText = document.createTextNode('0' + (index + 1));
     numbDiv.appendChild(numbDivText)
     el.prepend(numbDiv)
-    // numbDiv.style.setProperty('float', 'left')
-    if (index % 2 === 0){
-    numbDiv.style.setProperty('margin-left', '-500px')
-    } else {
-          numbDiv.style.setProperty('margin-right', '-500px')
-    }
-    numbDiv.style.setProperty('position', 'inline')
+
+    numbDiv.style.setProperty('position', 'absolute')
     numbDiv.style.setProperty('font-size', '5em')
     numbDiv.style.setProperty('font-weight', 'lighter')
+
+    if (index !== 4){
+      numbDiv.style.setProperty('margin-top', '50px') 
+    }
+
+    if (index % 2 === 0){
+      numbDiv.style.setProperty('left', (window.innerWidth/2 - 400) + 'px')
+    } else {
+      debugger
+      numbDiv.style.setProperty('right', (window.innerWidth/2 - 400) + 'px')
+      numbDiv.style.setProperty('display', 'inline')
+    }
   })
 }
 
