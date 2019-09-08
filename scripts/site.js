@@ -1320,24 +1320,29 @@ function aboutPageLayout() {
 
   // append numbers
   document.getElementsByTagName('h3').forEach(function (el, index){
-    let numbDiv = document.createElement('div')
-    let numbDivText = document.createTextNode('0' + (index + 1));
-    numbDiv.appendChild(numbDivText)
-    el.prepend(numbDiv)
+    let numbDiv = document.createElement('div')  // make div
+    let numbDivText
+    if (index % 2 === 0){
+      numbDivText = document.createTextNode('0' + (index + 1) + '---');  // add text
+    } else {
+      numbDivText = document.createTextNode('---0' + (index + 1));  // add text
+    }
+    numbDiv.appendChild(numbDivText) // add text to div
+    el.prepend(numbDiv) // prepend new step div to before the h3 el
 
     numbDiv.style.setProperty('position', 'absolute')
     numbDiv.style.setProperty('font-size', '5em')
     numbDiv.style.setProperty('font-weight', 'lighter')
-
+    numbDiv.className = 'steps'
 
     numbDiv.style.setProperty('margin-top', '50px') 
 
 
     if (index % 2 === 0){
-      numbDiv.style.setProperty('left', (window.innerWidth/2 - 300) + 'px')
+      numbDiv.style.setProperty('left', (window.innerWidth/2 - 250) + 'px')
       el.style.setProperty('padding-left', paddingOffset + 'px')
     } else {
-      numbDiv.style.setProperty('right', (window.innerWidth/2 - 300) + 'px')
+      numbDiv.style.setProperty('right', (window.innerWidth/2 - 250) + 'px')
       numbDiv.style.setProperty('display', 'inline')
       el.style.setProperty('padding-right', paddingOffset +'px')
     }
