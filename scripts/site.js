@@ -1330,6 +1330,8 @@ function aboutPageLayout() {
     numbDiv.appendChild(numbDivText) // add text to div
     el.prepend(numbDiv) // prepend new step div to before the h3 el
 
+    el.style.setProperty('font-weight', 'normal')
+    
     numbDiv.style.setProperty('position', 'absolute')
     numbDiv.style.setProperty('font-size', '5em')
     numbDiv.style.setProperty('font-weight', 'lighter')
@@ -1346,7 +1348,7 @@ function aboutPageLayout() {
       numbDiv.style.setProperty('display', 'inline')
       el.style.setProperty('padding-right', paddingOffset +'px')
     }
-  })
+  })    
  
 }
 
