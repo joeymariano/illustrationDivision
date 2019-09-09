@@ -204,9 +204,23 @@
       window.location.pathname !== '/about'&&  
       window.location.pathname !== '/animations' &&  
       window.location.pathname !== '/contact') {
-        window.onscroll = function () { 
-          fadeAndDeleteArrow('.downArrowContainer')
-        }
+
+        // Setup isScrolling variable
+        let isScrolling
+
+        // Listen for scroll events
+        window.addEventListener('scroll', function ( event ) {
+          // Clear our timeout throughout the scroll
+          window.clearTimeout(isScrolling)
+          // Set a timeout to run after scrolling ends
+          isScrolling = setTimeout(function() {
+            // Run the callback
+            fadeAndDeleteArrow('.downArrowContainer')
+
+          }, 10);
+
+        }, false);
+
   }
 </script>
 
