@@ -187,18 +187,27 @@
 {squarespace-footers}
 
 <script>
+  if (window.location.href.indexOf("about") > -1) {
+    aboutPageLayout()
+    window.addEventListener("resize", maintainAboutLayout)
+    window.addEventListener("reload", maintainAboutLayout)
 
-if (window.location.href.indexOf("about") > -1) {
-  aboutPageLayout()
-  window.addEventListener("resize", maintainAboutLayout)
-  window.addEventListener("reload", maintainAboutLayout)
-
-  window.onbeforeunload = function () {
-    if (window.location.href.indexOf("about") > -1) {
-      window.scrollTo(0, 0);
+    window.onbeforeunload = function () {
+      if (window.location.href.indexOf("about") > -1) {
+        window.scrollTo(0, 0);
+      }
     }
   }
-}
+
+  // if we're on any of the artist pages set up fade out of arrow
+  if (window.location.pathname !== '/' &&  
+      window.location.pathname !== '/about'&&  
+      window.location.pathname !== '/animations' &&  
+      window.location.pathname !== '/contact') {
+        window.onscroll = function () { 
+          fadeAndDeleteArrow('.downArrowContainer')
+        }
+  }
 </script>
 
 </body>
