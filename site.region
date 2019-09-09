@@ -188,13 +188,17 @@
 
 <script>
 window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
+  if (window.location.href.indexOf("about") > -1) {
+    window.scrollTo(0, 0);
+  }
 }
 
-// window.onresize = function () {
-//   window.scrollTo(0, 0);
-//   location.reload();
-// }
+
+window.onresize = function () {
+  if (window.location.href.indexOf("about") > -1) {
+    maintainAboutLayout()
+  }
+}
 
 if (window.location.href.indexOf("about") > -1) {
   aboutPageLayout()

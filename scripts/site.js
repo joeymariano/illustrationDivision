@@ -1321,15 +1321,12 @@ function aboutPageLayout() {
   // append numbers
   document.getElementsByTagName('h3').forEach(function (el, index){
     let numbDiv = document.createElement('div')  // make div
-    let numbDivText
-    if (index % 2 === 0){
-      numbDivText = document.createTextNode('0' + (index + 1) + '---');  // add text
-    } else {
-      numbDivText = document.createTextNode('---0' + (index + 1));  // add text
-    }
-    numbDiv.appendChild(numbDivText) // add text to div
     el.prepend(numbDiv) // prepend new step div to before the h3 el
-
+    if (index % 2 === 0){
+      numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: smaller;'>------</span>" // add text
+    } else {
+      numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: smaller;'>------</span> 0" + (index + 1)  // add text
+    }
     el.style.setProperty('font-weight', 'normal')
     
     numbDiv.style.setProperty('position', 'absolute')
@@ -1352,32 +1349,34 @@ function aboutPageLayout() {
  
 }
 
-// function maintainAboutLayout() {
-//    // image reposition
-//   let winWidth = window.innerWidth
-//   let xStart = (winWidth / 3) 
-//   let image = document.getElementsByTagName('img')[0]
-//   image.style.setProperty('left', xStart.toString() + 'px')
-//   image.style.setProperty('height', window.innerHeight)
+function maintainAboutLayout() {
+   // image reposition
+  let winWidth = window.innerWidth
+  let xStart = (winWidth / 3) 
 
-//   // paragraph manipulation
-//   let paragraph = document.getElementsByTagName('p')[0]
-//   paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
+  let image = document.getElementsByTagName('img')[0]
+  
+  image.style.setProperty('left', xStart.toString() + 'px')
+  image.style.setProperty('height', window.innerHeight)
 
-//   // need to calculate middle of empty space
-//   let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
-//   let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
-//   let screenHeight = window.innerHeight
+  // paragraph manipulation
+  let paragraph = document.getElementsByTagName('p')[0]
+  paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
 
-//   // rotate about us + place header 'about us'
-//   let aboutUs = document.getElementsByTagName('h1')[3]
-//   let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
+  // // need to calculate middle of empty space
+  // let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
+  // let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
+  // let screenHeight = window.innerHeight
 
-//   // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
-//   // ADD HALF OF THAT TO PARABTM
-//   let midVal = screenHeight - btmPara
-//   let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
+  // // rotate about us + place header 'about us'
+  // let aboutUs = document.getElementsByTagName('h1')[3]
+  // let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
 
-//   aboutUs.style.setProperty('left', leftPara.toString() + 'px')
-//   aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
-// }
+  // // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
+  // // ADD HALF OF THAT TO PARABTM
+  // let midVal = screenHeight - btmPara
+  // let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
+
+  // aboutUs.style.setProperty('left', leftPara.toString() + 'px')
+  // aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
+}
