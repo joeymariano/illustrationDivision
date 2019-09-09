@@ -187,22 +187,17 @@
 {squarespace-footers}
 
 <script>
-window.onbeforeunload = function () {
-  if (window.location.href.indexOf("about") > -1) {
-    window.scrollTo(0, 0);
-  }
-}
-
-
-window.onresize = function () {
-  if (window.location.href.indexOf("about") > -1) {
-    maintainAboutLayout()
-  }
-}
 
 if (window.location.href.indexOf("about") > -1) {
   aboutPageLayout()
-  // window.addEventListener("resize", maintainAboutLayout)
+  window.addEventListener("resize", maintainAboutLayout)
+  window.addEventListener("reload", maintainAboutLayout)
+
+  window.onbeforeunload = function () {
+    if (window.location.href.indexOf("about") > -1) {
+      window.scrollTo(0, 0);
+    }
+  }
 }
 </script>
 
