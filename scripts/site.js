@@ -1306,12 +1306,13 @@ function howWeWork() {
   greyContainer.style.setProperty('left', '-100px')
   greyContainer.style.setProperty('width', (window.innerWidth/3)*2 + 33 + 'px')
   greyContainer.style.setProperty('background-color', '#EEE')
+  greyContainer.style.setProperty('padding-bottom', '60px')
  
   let sqsContent = document.getElementsByClassName('sqs-block-content')[2]
   greyContainer.prepend(sqsContent)
 
   //padding offset for shifting elements left and right
-  let paddingOffset = 300
+  let paddingOffset = 350
 
   // adjust paragraphs in how-we-work
   let paragraphHowWeWork = []
@@ -1319,15 +1320,14 @@ function howWeWork() {
     if (index !== 0){
     paragraphHowWeWork.push(el)}
   })
+
   paragraphHowWeWork.forEach(function (el, index){
+    el.style.setProperty('width', '280px')
+    el.style.setProperty('margin', '0 auto')
     if (index % 2 === 0){
-      el.style.setProperty('width', '300px')
-      el.style.setProperty('margin', '0 auto')
-      el.style.setProperty('padding-left', paddingOffset + 'px')
+      el.style.setProperty('padding-right', paddingOffset + 'px')
     } else {
-      el.style.setProperty('width', '300px')
-      el.style.setProperty('margin', '0 auto')
-      el.style.setProperty('padding-right', paddingOffset +'px')
+      el.style.setProperty('padding-left', paddingOffset +'px')
     }
   })
 
@@ -1336,9 +1336,9 @@ function howWeWork() {
     let numbDiv = document.createElement('div')  // make div
     el.prepend(numbDiv) // prepend new step div to before the h3 el
     if (index % 2 === 0){
-      numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: smaller;'>------</span>" // add text
+      numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'>------------</span> 0" + (index + 1)  // add text
     } else {
-      numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: smaller;'>------</span> 0" + (index + 1)  // add text
+      numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'> ------------</span>" // add text
     }
     el.style.setProperty('font-weight', 'normal')
     
@@ -1350,13 +1350,17 @@ function howWeWork() {
     numbDiv.style.setProperty('margin-top', '50px') 
 
     if (index % 2 === 0){
-      numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
-      el.style.setProperty('padding-left', paddingOffset + 'px')
-    } else {
-      numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
+      numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
       el.style.setProperty('padding-right', paddingOffset + 'px')
+    } else {
+      numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
+      el.style.setProperty('padding-left', paddingOffset + 'px')
     }
   })
+
+  let howWeWorkH1 = document.getElementsByTagName('h1')[4]
+
+
 }
 
 // function maintainAboutLayout() {
