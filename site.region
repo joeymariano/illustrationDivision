@@ -187,16 +187,12 @@
 {squarespace-footers}
 
 <script>
+  window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+  }
+
   if (window.location.href.indexOf("about") > -1) {
     aboutPageLayout()
-    window.addEventListener("resize", maintainAboutLayout)
-    window.addEventListener("reload", maintainAboutLayout)
-
-    window.onbeforeunload = function () {
-      if (window.location.href.indexOf("about") > -1) {
-        window.scrollTo(0, 0);
-      }
-    }
   }
 
   // if we're on any of the artist pages set up fade out of arrow

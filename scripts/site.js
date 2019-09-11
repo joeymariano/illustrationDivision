@@ -1258,6 +1258,11 @@ function fadeAndDeleteArrow(el) {
 }
 
 function aboutPageLayout() {
+  imageAndBio()
+  howWeWork()
+}
+
+function imageAndBio() {
   //get header height
   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
 
@@ -1286,16 +1291,29 @@ function aboutPageLayout() {
   aboutUs.style.setProperty('transform-origin', 'left')
   aboutUs.style.setProperty('transform', 'rotate(-90deg)')
   aboutUs.style.setProperty('top', btmPara + 'px')
+}
 
-  // move how-we-work
+function howWeWork() {
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
-  howWeWork.style.setProperty('position', 'absolute')
-  howWeWork.style.setProperty('top', (window.innerHeight - 100) + 'px')
-  howWeWork.style.setProperty('left', '0')
-  howWeWork.style.setProperty('right', '0')
-  howWeWork.style.setProperty('margin-right', 'auto')
-  howWeWork.style.setProperty('margin-left', 'auto')
-  howWeWork.style.setProperty('padding-bottom', '100px')
+  let greyContainer = document.createElement('div')
+  howWeWork.prepend(greyContainer)
+  greyContainer.id = 'greyContainer'
+  greyContainer.style.setProperty('position', 'absolute')
+  greyContainer.style.setProperty('top', '0')
+  greyContainer.style.setProperty('left', '-100px')
+  greyContainer.style.setProperty('width', (window.innerWidth/3)*2 + 33 + 'px')
+  greyContainer.style.setProperty('background-color', '#EEE')
+ 
+  let sqsContent = document.getElementsByClassName('sqs-block-content')[2]
+  greyContainer.prepend(sqsContent)
+
+  // howWeWork.style.setProperty('position', 'absolute')
+  // howWeWork.style.setProperty('top', (window.innerHeight - 100) + 'px')
+  // howWeWork.style.setProperty('left', '0')
+  // howWeWork.style.setProperty('right', '0')
+  // howWeWork.style.setProperty('margin-right', 'auto')
+  // howWeWork.style.setProperty('margin-left', 'auto')
+  // howWeWork.style.setProperty('padding-bottom', '100px')
 
   //padding offset for shifting elements left and right
   let paddingOffset = 300
@@ -1338,45 +1356,43 @@ function aboutPageLayout() {
 
 
     if (index % 2 === 0){
-      numbDiv.style.setProperty('left', (window.innerWidth/2 - 250) + 'px')
+      numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
       el.style.setProperty('padding-left', paddingOffset + 'px')
     } else {
-      numbDiv.style.setProperty('right', (window.innerWidth/2 - 250) + 'px')
-      numbDiv.style.setProperty('display', 'inline')
-      el.style.setProperty('padding-right', paddingOffset +'px')
+      numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
+      el.style.setProperty('padding-right', paddingOffset + 'px')
     }
-  })    
- 
+  })
 }
 
-function maintainAboutLayout() {
-   // image reposition
-  let winWidth = window.innerWidth
-  let xStart = (winWidth / 3) 
+// function maintainAboutLayout() {
+//    // image reposition
+//   let winWidth = window.innerWidth
+//   let xStart = (winWidth / 3) 
 
-  let image = document.getElementsByTagName('img')[0]
+//   let image = document.getElementsByTagName('img')[0]
   
-  image.style.setProperty('left', xStart.toString() + 'px')
-  image.style.setProperty('height', window.innerHeight)
+//   image.style.setProperty('left', xStart.toString() + 'px')
+//   image.style.setProperty('height', window.innerHeight)
 
-  // paragraph manipulation
-  let paragraph = document.getElementsByTagName('p')[0]
-  paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
+//   // paragraph manipulation
+//   let paragraph = document.getElementsByTagName('p')[0]
+//   paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
 
-  // // need to calculate middle of empty space
-  // let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
-  // let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
-  // let screenHeight = window.innerHeight
+//   // // need to calculate middle of empty space
+//   // let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
+//   // let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
+//   // let screenHeight = window.innerHeight
 
-  // // rotate about us + place header 'about us'
-  // let aboutUs = document.getElementsByTagName('h1')[3]
-  // let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
+//   // // rotate about us + place header 'about us'
+//   // let aboutUs = document.getElementsByTagName('h1')[3]
+//   // let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
 
-  // // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
-  // // ADD HALF OF THAT TO PARABTM
-  // let midVal = screenHeight - btmPara
-  // let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
+//   // // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
+//   // // ADD HALF OF THAT TO PARABTM
+//   // let midVal = screenHeight - btmPara
+//   // let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
 
-  // aboutUs.style.setProperty('left', leftPara.toString() + 'px')
-  // aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
-}
+//   // aboutUs.style.setProperty('left', leftPara.toString() + 'px')
+//   // aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
+// }
