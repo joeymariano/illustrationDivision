@@ -1271,7 +1271,6 @@ function imageAndBio() {
   let image = document.getElementsByTagName('img')[0]
   page.appendChild(image)
   let xStart = (window.innerWidth / 3) 
-  image.style.setProperty('z-index', '-999')
   image.style.setProperty('top', '0')
   image.style.setProperty('left', xStart.toString() + 'px')
   image.style.setProperty('width', ((window.innerWidth / 3)*2 - 16)  + 'px')
@@ -1294,26 +1293,22 @@ function imageAndBio() {
 }
 
 function howWeWork() {
+
+
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   let greyContainer = document.createElement('div')
   howWeWork.prepend(greyContainer)
   greyContainer.id = 'greyContainer'
+  document.getElementById('block-yui_3_17_2_1_1563310970536_28677').style.setProperty('position', 'unset')
   greyContainer.style.setProperty('position', 'absolute')
-  greyContainer.style.setProperty('top', '0')
+  let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
+  greyContainer.style.setProperty('top', (window.innerHeight - headerHeight) + 'px' ) // window height - minus the header
   greyContainer.style.setProperty('left', '-100px')
   greyContainer.style.setProperty('width', (window.innerWidth/3)*2 + 33 + 'px')
   greyContainer.style.setProperty('background-color', '#EEE')
  
   let sqsContent = document.getElementsByClassName('sqs-block-content')[2]
   greyContainer.prepend(sqsContent)
-
-  // howWeWork.style.setProperty('position', 'absolute')
-  // howWeWork.style.setProperty('top', (window.innerHeight - 100) + 'px')
-  // howWeWork.style.setProperty('left', '0')
-  // howWeWork.style.setProperty('right', '0')
-  // howWeWork.style.setProperty('margin-right', 'auto')
-  // howWeWork.style.setProperty('margin-left', 'auto')
-  // howWeWork.style.setProperty('padding-bottom', '100px')
 
   //padding offset for shifting elements left and right
   let paddingOffset = 300
@@ -1353,7 +1348,6 @@ function howWeWork() {
     numbDiv.className = 'steps'
 
     numbDiv.style.setProperty('margin-top', '50px') 
-
 
     if (index % 2 === 0){
       numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
