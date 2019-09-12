@@ -1302,7 +1302,7 @@ function imageAndBio() {
 }
 
 function howWeWork() {
-
+  let imgHeight = document.getElementsByTagName('img')[0].getBoundingClientRect().height
 
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   let greyContainer = document.createElement('div')
@@ -1311,7 +1311,7 @@ function howWeWork() {
   document.getElementById('block-yui_3_17_2_1_1563310970536_28677').style.setProperty('position', 'unset')
   greyContainer.style.setProperty('position', 'absolute')
   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
-  greyContainer.style.setProperty('top', (window.innerHeight - headerHeight) + 'px' ) // window height - minus the header
+  greyContainer.style.setProperty('top', imgHeight + 'px' )
   greyContainer.style.setProperty('left', '-100px')
   greyContainer.style.setProperty('width', (window.innerWidth/3)*2 + 33 + 'px')
   greyContainer.style.setProperty('background-color', '#EEE')
