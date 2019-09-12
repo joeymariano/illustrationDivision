@@ -1285,7 +1285,7 @@ function imageAndBio() {
   paragraph.style.setProperty('padding-top', image.getBoundingClientRect().height/5 + 'px')
   paragraph.style.setProperty('left', window.innerWidth/2 + 'px')
   paragraph.style.setProperty('width', window.innerWidth/2.5 + 'px')
-  paragraph.style.setProperty('font-size', '.9em')
+  // paragraph.style.setProperty('font-size', '.9em')
   paragraph.style.setProperty('text-align', 'justify')
 
   // delete aboutUs header
@@ -1297,6 +1297,7 @@ function howWeWork() {
   let imgHeight = document.getElementsByTagName('img')[0].getBoundingClientRect().height
   let hdrHeight = document.getElementById('header').getBoundingClientRect().bottom
   let hdrWidth = document.getElementById('header').getBoundingClientRect().width
+  let viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   let greyContainer = document.createElement('div')
@@ -1307,7 +1308,7 @@ function howWeWork() {
   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
   greyContainer.style.setProperty('top', imgHeight + 'px' )
   greyContainer.style.setProperty('left', '0')
-  greyContainer.style.setProperty('height', window.innerHeight - (imgHeight + hdrHeight) + 'px')
+  greyContainer.style.setProperty('height', viewPortHeight - (imgHeight + hdrHeight) + 'px')
   greyContainer.style.setProperty('width', hdrWidth + 'px')
   greyContainer.style.setProperty('background-color', '#EEE')
   greyContainer.style.setProperty('padding-bottom', '60px')
@@ -1377,8 +1378,9 @@ function howWeWork() {
   greyContainer.prepend(hdr)
   hdr.style.setProperty('text-align', 'left')
   hdr.style.setProperty('margin-left', '100px')
+  hdr.style.setProperty('margin-bottom', '20px')
 
-  let quarterPage = (window.innerWidth + 100)/4
+  let quarterPage = (window.innerWidth + 100)/4  // 100 is for padding
   stepContainers.forEach(function (el, index){
     if (index === 0){
       el.style.setProperty('margin-left', '100px')
@@ -1387,61 +1389,7 @@ function howWeWork() {
     el.style.setProperty('left', (index*quarterPage) + 'px')
   })
 
+  document.getElementsByTagName('p')[0].style.setProperty('padding-left', '100px')
 
-
-  // // set paraContainer styles
-  // document.getElementsByClassName('paraContainer').forEach(function (el){
-  //   el.style.setProperty('float', 'left')
-  //   el.style.setProperty('width', '280px')
-  // })
-
-  // let quarterPage = window.innerWidth/4
-
-  // // adjust paragraph position
-  // paragraphHowWeWork.forEach(function (el, index){
-  //   el.style.setProperty('position', 'absolute')
-  //   el.style.setProperty('width', '280px')
-  //   el.style.setProperty('left', (index * quarterPage) + 'px')
-  //   el.style.setProperty('top', '50px')
-  // })
-
-  // // adjust headers for paragraphs
-  // h3HowWeWork.forEach(function (el, index){
-  //   el.style.setProperty('position', 'absolute')
-  //   el.style.setProperty('left', (index * quarterPage) + 'px')
-  //   el.style.setProperty('top', '0')
-  // })
+  document.getElementById('pageWrapper').style.setProperty('position', 'absolute')
 }
-
-
-// function maintainAboutLayout() {
-//    // image reposition
-//   let winWidth = window.innerWidth
-//   let xStart = (winWidth / 3) 
-
-//   let image = document.getElementsByTagName('img')[0]
-  
-//   image.style.setProperty('left', xStart.toString() + 'px')
-//   image.style.setProperty('height', window.innerHeight)
-
-//   // paragraph manipulation
-//   let paragraph = document.getElementsByTagName('p')[0]
-//   paragraph.style.setProperty('margin-right', -winWidth/40 + 'px')
-
-//   // // need to calculate middle of empty space
-//   // let btmPara = Math.ceil(paragraph.getBoundingClientRect().bottom)
-//   // let leftPara = Math.ceil(paragraph.getBoundingClientRect().left)
-//   // let screenHeight = window.innerHeight
-
-//   // // rotate about us + place header 'about us'
-//   // let aboutUs = document.getElementsByTagName('h1')[3]
-//   // let aboutUsWidth = Math.ceil(aboutUs.offsetWidth)
-
-//   // // GET DIFF BETWEEN SCREEN HEIGHT AND PARA BTM
-//   // // ADD HALF OF THAT TO PARABTM
-//   // let midVal = screenHeight - btmPara
-//   // let targetPlace = Math.ceil((btmPara + midVal) - (aboutUsWidth/2))
-
-//   // aboutUs.style.setProperty('left', leftPara.toString() + 'px')
-//   // aboutUs.style.setProperty('top', targetPlace.toString() + 'px')
-// }
