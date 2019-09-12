@@ -1288,14 +1288,6 @@ function imageAndBio() {
   paragraph.style.setProperty('font-size', '.9em')
   paragraph.style.setProperty('text-align', 'justify')
 
-  // // rotate about us heading
-  // let btmPara = paragraph.getBoundingClientRect().bottom
-  // let aboutUs = document.getElementsByTagName('h1')[3]
-  // aboutUs.style.setProperty('position', 'absolute')
-  // aboutUs.style.setProperty('transform-origin', 'left')
-  // aboutUs.style.setProperty('transform', 'rotate(-90deg)')
-  // aboutUs.style.setProperty('top', btmPara + 'px')
-
   // delete aboutUs header
   let aboutUs = document.getElementsByTagName('h1')[3]
   aboutUs.parentNode.removeChild(aboutUs) 
@@ -1303,6 +1295,8 @@ function imageAndBio() {
 
 function howWeWork() {
   let imgHeight = document.getElementsByTagName('img')[0].getBoundingClientRect().height
+  let hdrHeight = document.getElementById('header').getBoundingClientRect().bottom
+  let hdrWidth = document.getElementById('header').getBoundingClientRect().width
 
   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
   let greyContainer = document.createElement('div')
@@ -1312,62 +1306,96 @@ function howWeWork() {
   greyContainer.style.setProperty('position', 'absolute')
   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
   greyContainer.style.setProperty('top', imgHeight + 'px' )
-  greyContainer.style.setProperty('left', '-100px')
-  greyContainer.style.setProperty('width', (window.innerWidth/3)*2 + 33 + 'px')
+  greyContainer.style.setProperty('left', '0')
+  greyContainer.style.setProperty('height', window.innerHeight - (imgHeight + hdrHeight) + 'px')
+  greyContainer.style.setProperty('width', hdrWidth + 'px')
   greyContainer.style.setProperty('background-color', '#EEE')
   greyContainer.style.setProperty('padding-bottom', '60px')
  
   let sqsContent = document.getElementsByClassName('sqs-block-content')[2]
   greyContainer.prepend(sqsContent)
 
-  //padding offset for shifting elements left and right
-  let paddingOffset = 350
-
-  // adjust paragraphs in how-we-work
+  // grab paragraphs
   let paragraphHowWeWork = []
   document.getElementsByTagName('p').forEach(function (el, index){
-    if (index !== 0){
-    paragraphHowWeWork.push(el)}
+    if (index !== 0){  // exclude first bio paragraph
+      paragraphHowWeWork.push(el)
+    }
   })
 
-  paragraphHowWeWork.forEach(function (el, index){
+  // grab headers
+  let h3HowWeWork = []
+  document.getElementsByTagName('h3').forEach(function (el){
+      h3HowWeWork.push(el)
+  })
+
+  // create Containers for text and paragraph and position
+  let quarterPage = window.innerWidth/4
+  for(let i=0; i < 4; i++){
+    let paraContainer = document.createElement('div')
+    paraContainer.classList.add('paraContainer')
+    greyContainer.appendChild(paraContainer)
+    paraContainer.appendChild(h3HowWeWork[i])
+    paraContainer.appendChild(paragraphHowWeWork[i])
+  }
+
+  document.getElementsByClassName('paraContainer').forEach(function (el, index){
+    el.style.setProperty('position', 'absolute')
     el.style.setProperty('width', '280px')
-    el.style.setProperty('margin', '0 auto')
-    if (index % 2 === 0){
-      el.style.setProperty('padding-right', paddingOffset + 'px')
-    } else {
-      el.style.setProperty('padding-left', paddingOffset +'px')
-    }
+    el.style.setProperty('left', (index * quarterPage) + 'px')
+    el.style.setProperty('top', '50px')
   })
 
-  // append numbers
-  document.getElementsByTagName('h3').forEach(function (el, index){
-    let numbDiv = document.createElement('div')  // make div
-    el.prepend(numbDiv) // prepend new step div to before the h3 el
-    if (index % 2 === 0){
-      numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'>------------</span> 0" + (index + 1)  // add text
-    } else {
-      numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'> ------------</span>" // add text
-    }
-    el.style.setProperty('font-weight', 'normal')
+  let hdr = document.getElementsByTagName('h1')[3]
+  hdr.style.setProperty('text-align', 'left')
+
+
+
+  // let quarterPage = window.innerWidth/4
+
+  // // adjust paragraph position
+  // paragraphHowWeWork.forEach(function (el, index){
+  //   el.style.setProperty('position', 'absolute')
+  //   el.style.setProperty('width', '280px')
+  //   el.style.setProperty('left', (index * quarterPage) + 'px')
+  //   el.style.setProperty('top', '50px')
+  // })
+
+  // // adjust headers for paragraphs
+  // h3HowWeWork.forEach(function (el, index){
+  //   el.style.setProperty('position', 'absolute')
+  //   el.style.setProperty('left', (index * quarterPage) + 'px')
+  //   el.style.setProperty('top', '0')
+  // })
+
+  // // append numbers
+  // document.getElementsByTagName('h3').forEach(function (el, index){
+  //   let numbDiv = document.createElement('div')  // make div
+  //   el.prepend(numbDiv) // prepend new step div to before the h3 el
+  //   if (index % 2 === 0){
+  //     numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'>------------</span> 0" + (index + 1)  // add text
+  //   } else {
+  //     numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'> ------------</span>" // add text
+  //   }
+  //   el.style.setProperty('font-weight', 'normal')
     
-    numbDiv.style.setProperty('position', 'absolute')
-    numbDiv.style.setProperty('font-size', '5em')
-    numbDiv.style.setProperty('font-weight', 'lighter')
-    numbDiv.className = 'steps'
+  //   numbDiv.style.setProperty('position', 'absolute')
+  //   numbDiv.style.setProperty('font-size', '5em')
+  //   numbDiv.style.setProperty('font-weight', 'lighter')
+  //   numbDiv.className = 'steps'
 
-    numbDiv.style.setProperty('margin-top', '50px') 
+  //   numbDiv.style.setProperty('margin-top', '50px') 
 
-    if (index % 2 === 0){
-      numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
-      el.style.setProperty('padding-right', paddingOffset + 'px')
-    } else {
-      numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
-      el.style.setProperty('padding-left', paddingOffset + 'px')
-    }
-  })
+  //   if (index % 2 === 0){
+  //     numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
+  //     el.style.setProperty('padding-right', paddingOffset + 'px')
+  //   } else {
+  //     numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
+  //     el.style.setProperty('padding-left', paddingOffset + 'px')
+  //   }
+  // })
 
-  let howWeWorkH1 = document.getElementsByTagName('h1')[4]
+  // let howWeWorkH1 = document.getElementsByTagName('h1')[4]
 
 
 }
