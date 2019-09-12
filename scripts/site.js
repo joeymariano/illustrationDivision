@@ -1320,6 +1320,7 @@ function howWeWork() {
   document.getElementsByTagName('p').forEach(function (el, index){
     if (index !== 0){  // exclude first bio paragraph
       paragraphHowWeWork.push(el)
+      el.style.setProperty('text-align', 'left')
     }
   })
 
@@ -1327,29 +1328,69 @@ function howWeWork() {
   let h3HowWeWork = []
   document.getElementsByTagName('h3').forEach(function (el){
       h3HowWeWork.push(el)
+      el.style.setProperty('text-align', 'left')
+      el.style.setProperty('margin-top', '0')
   })
 
   // create Containers for text and paragraph and position
-  let quarterPage = window.innerWidth/4
   for(let i=0; i < 4; i++){
     let paraContainer = document.createElement('div')
     paraContainer.classList.add('paraContainer')
+    paraContainer.style.setProperty('float', 'left')
+    paraContainer.style.setProperty('width', '280px')
     greyContainer.appendChild(paraContainer)
     paraContainer.appendChild(h3HowWeWork[i])
     paraContainer.appendChild(paragraphHowWeWork[i])
   }
 
+  // append numbers
   document.getElementsByClassName('paraContainer').forEach(function (el, index){
-    el.style.setProperty('position', 'absolute')
-    el.style.setProperty('width', '280px')
-    el.style.setProperty('left', (index * quarterPage) + 'px')
-    el.style.setProperty('top', '50px')
+    let numbDiv = document.createElement('div')  // make div
+    el.parentNode.insertBefore(numbDiv, el) // prepend new step div to before the h3 el
+    numbDiv.innerHTML = "0" + (index + 1)  // add text
+    numbDiv.className = 'steps'
+    numbDiv.style.setProperty('float', 'left')
+    numbDiv.style.setProperty('font-size', '3em')
+    numbDiv.style.setProperty('margin-top', '9px')
+    numbDiv.style.setProperty('margin-right', '16px')
   })
 
+  // grab step divs
+  let stepDivs = document.getElementsByClassName('steps')
+  let paraContainers = document.getElementsByClassName('paraContainer')
+
+  // create container for number, header, and paragraph
+  for(let i=0; i < 4; i++){
+    let stepContainer = document.createElement('div')
+    stepContainer.classList.add('stepContainer')
+    greyContainer.prepend(stepContainer)
+  }
+  // attach
+
+  let stepContainers = document.getElementsByClassName('stepContainer')
+  stepContainers.forEach(function (el, index){
+    el.appendChild(stepDivs[index])
+    el.appendChild(paraContainers[index])
+  })
+
+  // move header over to left and position before steps
   let hdr = document.getElementsByTagName('h1')[3]
+  greyContainer.prepend(hdr)
   hdr.style.setProperty('text-align', 'left')
 
+  let quarterPage = window.innerWidth/4
+  stepContainers.forEach(function (el, index){
+    el.style.setProperty('position', 'absolute')
+    el.style.setProperty('left', (index*quarterPage) + 'px')
+  })
 
+
+
+  // // set paraContainer styles
+  // document.getElementsByClassName('paraContainer').forEach(function (el){
+  //   el.style.setProperty('float', 'left')
+  //   el.style.setProperty('width', '280px')
+  // })
 
   // let quarterPage = window.innerWidth/4
 
@@ -1367,38 +1408,8 @@ function howWeWork() {
   //   el.style.setProperty('left', (index * quarterPage) + 'px')
   //   el.style.setProperty('top', '0')
   // })
-
-  // // append numbers
-  // document.getElementsByTagName('h3').forEach(function (el, index){
-  //   let numbDiv = document.createElement('div')  // make div
-  //   el.prepend(numbDiv) // prepend new step div to before the h3 el
-  //   if (index % 2 === 0){
-  //     numbDiv.innerHTML = "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'>------------</span> 0" + (index + 1)  // add text
-  //   } else {
-  //     numbDiv.innerHTML = '0' + (index + 1) + "<span style='letter-spacing: -6px !important; font-size: .5em; font-family: arial !important'> ------------</span>" // add text
-  //   }
-  //   el.style.setProperty('font-weight', 'normal')
-    
-  //   numbDiv.style.setProperty('position', 'absolute')
-  //   numbDiv.style.setProperty('font-size', '5em')
-  //   numbDiv.style.setProperty('font-weight', 'lighter')
-  //   numbDiv.className = 'steps'
-
-  //   numbDiv.style.setProperty('margin-top', '50px') 
-
-  //   if (index % 2 === 0){
-  //     numbDiv.style.setProperty('right', greyContainer.getBoundingClientRect().width/2 - 250 + 'px') // math
-  //     el.style.setProperty('padding-right', paddingOffset + 'px')
-  //   } else {
-  //     numbDiv.style.setProperty('left', greyContainer.getBoundingClientRect().width/2 - 250 + 'px')
-  //     el.style.setProperty('padding-left', paddingOffset + 'px')
-  //   }
-  // })
-
-  // let howWeWorkH1 = document.getElementsByTagName('h1')[4]
-
-
 }
+
 
 // function maintainAboutLayout() {
 //    // image reposition
