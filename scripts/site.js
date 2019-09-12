@@ -1365,7 +1365,6 @@ function howWeWork() {
     stepContainer.classList.add('stepContainer')
     greyContainer.prepend(stepContainer)
   }
-  // attach
 
   let stepContainers = document.getElementsByClassName('stepContainer')
   stepContainers.forEach(function (el, index){
@@ -1377,9 +1376,13 @@ function howWeWork() {
   let hdr = document.getElementsByTagName('h1')[3]
   greyContainer.prepend(hdr)
   hdr.style.setProperty('text-align', 'left')
+  hdr.style.setProperty('margin-left', '100px')
 
-  let quarterPage = window.innerWidth/4
+  let quarterPage = (window.innerWidth + 100)/4
   stepContainers.forEach(function (el, index){
+    if (index === 0){
+      el.style.setProperty('margin-left', '100px')
+    }
     el.style.setProperty('position', 'absolute')
     el.style.setProperty('left', (index*quarterPage) + 'px')
   })
