@@ -1272,24 +1272,33 @@ function imageAndBio() {
   page.appendChild(image)
   let xStart = (window.innerWidth / 3) 
   image.style.setProperty('top', '0')
-  image.style.setProperty('left', xStart.toString() + 'px')
-  image.style.setProperty('width', ((window.innerWidth / 3)*2 - 16)  + 'px')
-  image.style.setProperty('height', (window.innerHeight - headerHeight) + 'px')
+  // image.style.setProperty('left', xStart.toString() + 'px')
+  image.style.setProperty('left', '0')
+  image.style.setProperty('width', ((window.innerWidth / 2) - 16)  + 'px')
+  image.style.setProperty('height', ((window.innerHeight - headerHeight)/3)*2 + 'px')
+  image.style.setProperty('object-fit', 'cover')
+  image.style.setProperty('z-index', '-999')
 
   // paragraph manipulation
   let paragraph = document.getElementsByTagName('p')[0]
-  paragraph.style.setProperty('margin-right', -window.innerWidth/40 + 'px')
-  paragraph.style.setProperty('padding', '0')
-  paragraph.style.setProperty('font-size', '.8em')
+  paragraph.style.setProperty('position', 'absolute')
+  paragraph.style.setProperty('padding-top', image.getBoundingClientRect().height/5 + 'px')
+  paragraph.style.setProperty('left', window.innerWidth/2 + 'px')
+  paragraph.style.setProperty('width', window.innerWidth/2.5 + 'px')
+  paragraph.style.setProperty('font-size', '.9em')
   paragraph.style.setProperty('text-align', 'justify')
 
-  // need to calculate middle of empty space
-  let btmPara = paragraph.getBoundingClientRect().bottom
+  // // rotate about us heading
+  // let btmPara = paragraph.getBoundingClientRect().bottom
+  // let aboutUs = document.getElementsByTagName('h1')[3]
+  // aboutUs.style.setProperty('position', 'absolute')
+  // aboutUs.style.setProperty('transform-origin', 'left')
+  // aboutUs.style.setProperty('transform', 'rotate(-90deg)')
+  // aboutUs.style.setProperty('top', btmPara + 'px')
+
+  // delete aboutUs header
   let aboutUs = document.getElementsByTagName('h1')[3]
-  aboutUs.style.setProperty('position', 'absolute')
-  aboutUs.style.setProperty('transform-origin', 'left')
-  aboutUs.style.setProperty('transform', 'rotate(-90deg)')
-  aboutUs.style.setProperty('top', btmPara + 'px')
+  aboutUs.parentNode.removeChild(aboutUs) 
 }
 
 function howWeWork() {
