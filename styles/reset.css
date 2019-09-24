@@ -222,3 +222,21 @@ body.page-titledescription:not(.view-item) #page-title {
     margin-top: -60px !important
   }
 }
+
+/* collapse ol when below a certain point */
+
+
+@media only screen and (min-width: 0px) and (max-width: 1130px) {
+  #aboutList {
+    display: grid !important;
+  }
+
+  #aboutList li {
+    padding-bottom: 25px;
+  }
+
+  #aboutList li div {
+    width: 345px;
+  }
+}
+
