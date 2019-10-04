@@ -169,15 +169,16 @@ body.page-titledescription:not(.view-item) #page-title {
 /* for bio pic */
 
 .image-block-wrapper{
-  width:79% !important;
+  width:80% !important;
   height: 100% !important;
 }
 
 
 #yui_3_17_2_1_1569363438313_82, .image-block-outer-wrapper {
-    height: 800px !important;
+    height: 500px !important;
     overflow: hidden !important;
 }
+
 /* for darker arrows */
 
 .sqs-lightbox-next:before {
