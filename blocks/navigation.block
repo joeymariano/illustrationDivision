@@ -3,41 +3,46 @@
   {.repeated section items}
 
     {.collection?}
-      <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
-
+    
         {.index?}
           {.equal?:collection.navigationTitle:"home"}
+            <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
             <a href="/">{webstie.siteTitle}</a>
+          </li>
           {.or}
+            <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
             <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          </li>
           {.end}
         {.or folder?}
           <a>{collection.navigationTitle}</a>
-          <div class="nav subnav">
-            <ul>
-              {.repeated section items}
-                {.collection?}
-                  <li class="{collection.typeLabel}-collection{.section active} active-link{.end}">
-                    <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-                  </li>
-                {.end}
-                {.section externalLink}
-                  <li class="external-link">
-                    <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
-                  </li>
-                {.end}
-              {.end}
-            </ul>
-          </div>
+          <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
+            <div class="nav subnav">
+              <ul>
+                {.repeated section items}
+                    {.collection?}
+                     <li class="{collection.typeLabel}-collection{.section active} active-link{.end}">
+                       <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+                     </li>
+                    {.end}
+                    {.section externalLink}
+                      <li class="external-link">
+                        <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+                      </li>
+                    {.end}
+                  {.end}
+                </ul>
+            </div>
+          </li>
+        {.or equal?:collection.navigationTitle:"home"}
+          <!-- do nothing -->
         {.or}
-          {.equal?:collection.navigationTitle:"home"}
-            <a href="/"><h1 class="logo logo-text chill-margins">{website.siteTitle}</h1></a>
-          {.or}
+          <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
             <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-          {.end}
+          </li>
         {.end}
 
-      </li>
+
     {.end}
 
     {.section externalLink}

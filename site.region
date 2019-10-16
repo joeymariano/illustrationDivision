@@ -20,13 +20,9 @@
             <span class="ctrl-button menu"><a class="icon-hamburger"></a></span>
             {.section website}
               <div id="logo" data-content-field="site-title">
-              {.if logoImageUrl}
-                <h1 class="logo logo-image">
-                  <a href="/"><img src="{logoImageUrl}?format=750w" alt="{siteTitle}" /></a>
-                </h1>
-              {.or}
-                <h1 class="logo logo-text logo-mobile"><a href="/">{siteTitle}</a></h1>
-              {.end}
+
+                <h1 class="logo-text logo-mobile"><a href="/">{siteTitle}</a></h1>
+
 
                 <script>
                   Y.use('squarespace-ui-base', function(Y) {
