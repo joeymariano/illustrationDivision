@@ -3,7 +3,7 @@
   {.repeated section items}
 
     {.collection?}
-    
+
         {.index?}
           {.equal?:collection.navigationTitle:"home"}
             <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
@@ -15,8 +15,9 @@
           </li>
           {.end}
         {.or folder?}
-          <a>{collection.navigationTitle}</a>
           <li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}">
+            <a>{collection.navigationTitle}</a>
+
             <div class="nav subnav">
               <ul>
                 {.repeated section items}
