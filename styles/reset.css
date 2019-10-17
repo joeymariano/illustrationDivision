@@ -209,7 +209,7 @@ body.page-titledescription:not(.view-item) #page-title {
 
 @media only screen and (min-width: 734px) and (max-width: 835px){
   h1, h1 a{
-    font-size: 24px !important;
+    font-size: 46px !important;
   }
 }
 
@@ -244,4 +244,8 @@ body.page-titledescription:not(.view-item) #page-title {
 
 #topNav .main-nav li a:hover {
   border-bottom-color: transparent !important;
+}
+
+.image-block-outer-wrapper {
+  display: inline !important;
 }
