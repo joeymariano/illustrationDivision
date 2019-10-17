@@ -242,3 +242,6 @@ body.page-titledescription:not(.view-item) #page-title {
   }
 }
 
+#topNav .main-nav li a:hover {
+  border-bottom-color: transparent !important;
+}
