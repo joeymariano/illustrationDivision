@@ -135,8 +135,8 @@ html {
 }
 
 #mainContent {
-  margin-top: none !important;
-  margin: 5% auto !important;
+  margin-top: -20px !important;
+
   padding: 0 !important;
 }
 
@@ -242,9 +242,13 @@ body.page-titledescription:not(.view-item) #page-title {
   }
 }
 
+/* get rid of underline */
+
 #topNav .main-nav li a:hover {
   border-bottom-color: transparent !important;
 }
+
+/* bring content under image up */
 
 .image-block-outer-wrapper {
   display: inline !important;
