@@ -253,3 +253,7 @@ body.page-titledescription:not(.view-item) #page-title {
 .image-block-outer-wrapper {
   display: inline !important;
 }
+
+header {
+  height: 110px;
+}
