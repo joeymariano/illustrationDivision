@@ -257,3 +257,11 @@ body.page-titledescription:not(.view-item) #page-title {
 header {
   height: 110px;
 }
+
+.image-slide-title {
+  font-size: 1em;
+}
+
+.sqs-gallery-block-grid.sqs-gallery-block-meta-only-title .margin-wrapper .image-slide-title {
+  font-size: 16px !important;
+ }
