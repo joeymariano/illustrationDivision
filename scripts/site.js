@@ -1411,10 +1411,6 @@ function appendDownArrow() {
   // make image
   let arrowImage = document.createElement('img')
   arrowImage.id = `newDownArrow`
-  arrowImage.src = `https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ce5d897b208fc5f78b92e4e/1558567063018/Down-Arrow-PNG-HD.png`
+  arrowImage.src = `https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5db000576fe7e15722ab9344/1571815511475/thick-down.png`
   arrowLink.prepend(arrowImage)
 }
-
-  // <div class="downArrowContainer">
-  //     <a href="javascript: scrollDown('.sqs-block-gallery');"><img id="newDownArrow" src="https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5ce5d897b208fc5f78b92e4e/1558567063018/Down-Arrow-PNG-HD.png"></a>
-  // </div>
