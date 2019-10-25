@@ -171,10 +171,6 @@
       window.scrollTo(0, 0);
   }
 
-  // if (window.location.href.indexOf("about") > -1) {
-  //   aboutPageLayout()
-  // }
-
   // if we're on any of the artist pages set up fade out of arrow
   if (window.location.pathname !== '/' &&  
       window.location.pathname !== '/about'&&  
@@ -201,6 +197,13 @@
         }, false);
 
   }
+
+  if (window.location.pathname !== '/about' &&  
+      window.location.pathname !== '/contact') {
+
+      appendTopArrow()
+  }
+
 </script>
 
 </body>

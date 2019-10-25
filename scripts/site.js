@@ -1236,8 +1236,6 @@ function scrollDown(el_name){
   let element = document.querySelector(el_name)
   let headerHeight = document.querySelector('#header').offsetHeight
   let elementY = element.getBoundingClientRect().y
-  // let totalHeight = document.documentElement.offsetHeight
-  // let browserScrollPosition = document.documentElement.offsetHeight
 
   scrollTo(0, elementY)
 }
@@ -1257,146 +1255,7 @@ function fadeAndDeleteArrow(el) {
     }, 10);
 }
 
-// function aboutPageLayout() {
-//   imageAndBio()
-//   howWeWork()
-// }
-
-// function imageAndBio() {
-//   //get header height
-//   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
-
-//   // image reposition
-//   let page = document.getElementById('page')
-//   let image = document.getElementsByTagName('img')[0]
-//   page.appendChild(image)
-//   let xStart = (window.innerWidth / 3) 
-//   image.style.setProperty('top', '0')
-//   // image.style.setProperty('left', xStart.toString() + 'px')
-//   image.style.setProperty('left', '0')
-//   image.style.setProperty('width', ((window.innerWidth / 2) - 16)  + 'px')
-//   image.style.setProperty('height', ((window.innerHeight - headerHeight)/3)*2 + 'px')
-//   image.style.setProperty('object-fit', 'cover')
-//   image.style.setProperty('z-index', '-999')
-
-//   // paragraph manipulation
-//   let paragraph = document.getElementsByTagName('p')[0]
-//   paragraph.style.setProperty('position', 'absolute')
-//   paragraph.style.setProperty('padding-top', image.getBoundingClientRect().height/5 + 'px')
-//   paragraph.style.setProperty('left', window.innerWidth/2 + 'px')
-//   paragraph.style.setProperty('width', window.innerWidth/2.5 + 'px')
-//   // paragraph.style.setProperty('font-size', '.9em')
-//   paragraph.style.setProperty('text-align', 'justify')
-
-//   // delete aboutUs header
-//   let aboutUs = document.getElementsByTagName('h1')[3]
-//   aboutUs.parentNode.removeChild(aboutUs) 
-// }
-
-// function howWeWork() {
-//   let imgHeight = document.getElementsByTagName('img')[0].getBoundingClientRect().height
-//   let hdrHeight = document.getElementById('header').getBoundingClientRect().bottom
-//   let hdrWidth = document.getElementById('header').getBoundingClientRect().width
-//   let viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-//   let howWeWork = document.getElementById('block-yui_3_17_2_1_1563310970536_28677')
-//   let greyContainer = document.createElement('div')
-//   howWeWork.prepend(greyContainer)
-//   greyContainer.id = 'greyContainer'
-//   document.getElementById('block-yui_3_17_2_1_1563310970536_28677').style.setProperty('position', 'unset')
-//   greyContainer.style.setProperty('position', 'absolute')
-//   let headerHeight = document.getElementById('header').getBoundingClientRect().bottom
-//   greyContainer.style.setProperty('top', imgHeight + 'px' )
-//   greyContainer.style.setProperty('left', '0')
-//   greyContainer.style.setProperty('height', viewPortHeight - (imgHeight + hdrHeight) + 'px')
-//   greyContainer.style.setProperty('width', hdrWidth + 'px')
-//   greyContainer.style.setProperty('background-color', '#EEE')
-//   greyContainer.style.setProperty('padding-bottom', '60px')
- 
-//   let sqsContent = document.getElementsByClassName('sqs-block-content')[2]
-//   greyContainer.prepend(sqsContent)
-
-//   // grab paragraphs
-//   let paragraphHowWeWork = []
-//   document.getElementsByTagName('p').forEach(function (el, index){
-//     if (index !== 0){  // exclude first bio paragraph
-//       paragraphHowWeWork.push(el)
-//       el.style.setProperty('text-align', 'left')
-//     }
-//   })
-
-//   // grab headers
-//   let h3HowWeWork = []
-//   document.getElementsByTagName('h3').forEach(function (el){
-//       h3HowWeWork.push(el)
-//       el.style.setProperty('text-align', 'left')
-//       el.style.setProperty('margin-top', '0')
-//   })
-
-//   // create Containers for text and paragraph and position
-//   for(let i=0; i < 4; i++){
-//     let paraContainer = document.createElement('div')
-//     paraContainer.classList.add('paraContainer')
-//     paraContainer.style.setProperty('float', 'left')
-//     paraContainer.style.setProperty('width', '280px')
-//     greyContainer.appendChild(paraContainer)
-//     paraContainer.appendChild(h3HowWeWork[i])
-//     paraContainer.appendChild(paragraphHowWeWork[i])
-//   }
-
-//   // append numbers
-//   document.getElementsByClassName('paraContainer').forEach(function (el, index){
-//     let numbDiv = document.createElement('div')  // make div
-//     el.parentNode.insertBefore(numbDiv, el) // prepend new step div to before the h3 el
-//     numbDiv.innerHTML = "0" + (index + 1)  // add text
-//     numbDiv.className = 'steps'
-//     numbDiv.style.setProperty('float', 'left')
-//     numbDiv.style.setProperty('font-size', '3em')
-//     numbDiv.style.setProperty('margin-top', '9px')
-//     numbDiv.style.setProperty('margin-right', '16px')
-//   })
-
-//   // grab step divs
-//   let stepDivs = document.getElementsByClassName('steps')
-//   let paraContainers = document.getElementsByClassName('paraContainer')
-
-//   // create container for number, header, and paragraph
-//   for(let i=0; i < 4; i++){
-//     let stepContainer = document.createElement('div')
-//     stepContainer.classList.add('stepContainer')
-//     greyContainer.prepend(stepContainer)
-//   }
-
-//   let stepContainers = document.getElementsByClassName('stepContainer')
-//   stepContainers.forEach(function (el, index){
-//     el.appendChild(stepDivs[index])
-//     el.appendChild(paraContainers[index])
-//   })
-
-//   // move header over to left and position before steps
-//   let hdr = document.getElementsByTagName('h1')[3]
-//   greyContainer.prepend(hdr)
-//   hdr.style.setProperty('text-align', 'left')
-//   hdr.style.setProperty('margin-left', '50px')
-//   hdr.style.setProperty('margin-bottom', '20px')
-
-//   let quarterPage = (window.innerWidth + 100)/4  // 100 is for padding
-//   stepContainers.forEach(function (el, index){
-//     if (index === 0){
-//       el.style.setProperty('margin-left', '50px')
-//     }
-//     el.style.setProperty('position', 'absolute')
-//     el.style.setProperty('left', (index*quarterPage) + 'px')
-//   })
-
-//   document.getElementsByTagName('p')[0].style.setProperty('padding-left', '100px')
-
-//   document.getElementById('pageWrapper').style.setProperty('position', 'absolute')
-// }
-
 function appendDownArrow() {
-  // want to prependChild
-
   // make container
   let downArrowContainer = document.createElement('div')
   downArrowContainer.className = 'downArrowContainer'
@@ -1413,4 +1272,22 @@ function appendDownArrow() {
   arrowImage.id = `newDownArrow`
   arrowImage.src = `https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5db000576fe7e15722ab9344/1571815511475/thick-down.png`
   arrowLink.prepend(arrowImage)
+}
+
+function appendTopArrow(){
+  // make container
+  let topArrowContainer = document.createElement('div')
+  document.getElementById('mainContent').appendChild(topArrowContainer)
+  topArrowContainer.id = 'topArrowContainer'
+
+  // make link
+  let topArrowLink = document.createElement('a')
+  topArrowLink.href = `javascript: window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });`
+  topArrowContainer.prepend(topArrowLink)
+
+  // make image
+  let topArrowImage = document.createElement('img')
+  topArrowImage.id = `topArrow`
+  topArrowImage.src = `https://static1.squarespace.com/static/5cb8d6e2b2cf792657873a23/t/5db28a70a18773031dbdc23f/1571981936792/top_website.png`
+  topArrowLink.prepend(topArrowImage)
 }

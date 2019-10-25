@@ -265,3 +265,13 @@ header {
 .sqs-gallery-block-grid.sqs-gallery-block-meta-only-title .margin-wrapper .image-slide-title {
   font-size: 18px !important;
  }
+
+ #topArrowContainer {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+ }
+
+ #topArrow {
+  width: 120px;
+ }
